@@ -73,6 +73,9 @@
     <AppxPackagedFile Include="C:\Code\SmoothDemo\SmoothDemoClient\bin\x86\Debug\Core\resources.pri">
       <PackagePath>resources.pri</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\SmoothDemo\SmoothDemoClient\bin\x86\Debug\Core\SmoothDemoClient.csproj.AppLocalNetFX.GenerateResource.Cache">
+      <PackagePath>SmoothDemoClient.csproj.AppLocalNetFX.GenerateResource.Cache</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\SmoothDemo\SmoothDemoClient\bin\x86\Debug\Core\SmoothDemoClient.exe">
       <PackagePath>SmoothDemoClient.exe</PackagePath>
     </AppxPackagedFile>
