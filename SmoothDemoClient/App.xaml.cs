@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.SignalR.Client;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -17,7 +18,7 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=402347&clcid=0x409
 
-namespace SmoothDemoClient
+namespace SmoothDemo.Client
 {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
@@ -39,6 +40,14 @@ namespace SmoothDemoClient
 
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+
+
+            IHubProxy _hub;
+            string url = @"http://localhost:8080/";
+            var connection = new HubConnection(url);
+            _hub = connection.CreateHubProxy("ControlHub");
+            connection.Start().Wait();
+
         }
 
         /// <summary>

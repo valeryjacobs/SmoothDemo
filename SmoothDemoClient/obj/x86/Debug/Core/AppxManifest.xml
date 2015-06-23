@@ -21,7 +21,7 @@
     <Resource Language="EN-US" />
   </Resources>
   <Applications>
-    <Application Id="App" Executable="SmoothDemoClient.exe" EntryPoint="SmoothDemoClient.App">
+    <Application Id="App" Executable="SmoothDemo.Client.exe" EntryPoint="SmoothDemo.Client.App">
       <uap:VisualElements DisplayName="SmoothDemoClient" Square150x150Logo="Assets\Logo.png" Square44x44Logo="Assets\SmallLogo.png" Description="SmoothDemoClient" BackgroundColor="#464646">
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
       </uap:VisualElements>

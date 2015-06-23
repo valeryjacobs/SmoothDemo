@@ -1,1 +1,1 @@
-C:\Code\SmoothDemo\SmoothDemoClient\SmoothDemoClient.csproj;x86
+C:\Code\SmoothDemo\SmoothDemoClient\SmoothDemo.Client.csproj;x86

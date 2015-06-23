@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Owin.Hosting;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -14,11 +15,40 @@ namespace SmoothDemo.Agent
     public partial class App : Application
     {
         public static MainViewModel MainViewModel { get; set; }
+        IDisposable localHubHost { get; set; }
         public App()
         {
             MainViewModel = new MainViewModel();
 
             MainViewModel.Init();
+
+            try
+            {
+                MainViewModel.StatusMessage = "Starting local hub.";
+                localHubHost = WebApp.Start<Startup>(ConfigurationManager.AppSettings["LocalHubURL"]);
+
+                if (localHubHost == null)
+                    MainViewModel.StatusMessage ="Hub start failed.";
+                else
+                    MainViewModel.StatusMessage = "Hub  started on" + ConfigurationManager.AppSettings["LocalHubURL"] + "signalr/hubs";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            MainViewModel.StatusMessage = "Local hub started.";
+        }
+
+        protected override void OnExit(ExitEventArgs e)
+        {
+            if (localHubHost != null)
+            {
+                localHubHost.Dispose();
+                localHubHost = null;
+            }
+
+            base.OnExit(e);
         }
     }
 }
