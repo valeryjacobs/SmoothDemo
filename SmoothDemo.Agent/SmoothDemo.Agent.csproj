@@ -111,6 +111,7 @@
     </Compile>
     <Compile Include="Converters\ListValueConverter.cs" />
     <Compile Include="Hubs\ControlHub.cs" />
+    <Compile Include="Models\Command.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="MainWindow.xaml.cs">

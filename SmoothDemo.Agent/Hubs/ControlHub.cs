@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.SignalR;
+using SmoothDemo.Agent.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,12 @@ namespace SmoothDemo.Agent.Hubs
         {
             // Call the broadcastMessage method to update clients.
             Clients.All.broadcastMessage(name, message);
+        }
+
+        public void HandleCommand(Command command)
+        {
+            App.MainViewModel.(command);
+
         }
 
         public override Task OnConnected()

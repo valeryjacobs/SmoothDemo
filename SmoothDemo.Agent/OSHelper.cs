@@ -95,27 +95,26 @@ namespace SmoothDemo.Agent
                         Show((string)action.Content);
                         break;
                     case "Close":
-                        Close();
+                        CloseOpenedWindows();
                         break;
                     case "CloseAll":
                         while (AddedWindows.Count > 0)
                         {
-                            Close();
+                            CloseOpenedWindows();
                         }
                         break;
                 }
-
             }
             catch
             {
                 if (AddedWindows != null)
                 {
-                    Close();
+                    CloseOpenedWindows();
                 }
             }
         }
 
-        public void Close()
+        public void CloseOpenedWindows()
         {
             if (AddedWindows.Count > 0)
             {

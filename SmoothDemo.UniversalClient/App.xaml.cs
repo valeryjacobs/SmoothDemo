@@ -43,7 +43,6 @@ namespace SmoothDemo.UniversalClient
             this.InitializeComponent();
             this.Suspending += OnSuspending;
 
-
             var hubConnection = new HubConnection("http://localhost:8080");
             var proxy = hubConnection.CreateHubProxy("ControlHub");
             proxy.On<string, string>("Send", (name, message) =>
@@ -67,7 +66,6 @@ namespace SmoothDemo.UniversalClient
             //{
                 proxy.Invoke("Send", "W10 App", "Dit werkt!!!").Wait();
            // }
-
         }
 
         /// <summary>

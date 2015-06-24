@@ -1,13 +1,16 @@
-﻿using System;
+﻿using SmoothDemo.Agent.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using WindowsInput;
 
 namespace SmoothDemo.Agent
 {
@@ -51,11 +54,99 @@ namespace SmoothDemo.Agent
             }
         }
 
+        private OSHelper _osHelper;
+
+        public OSHelper OS
+        {
+            get { return _osHelper; }
+            set { _osHelper = value; }
+        }
+
+
         public void Init()
         {
             Tokens = Newtonsoft.Json.JsonConvert.DeserializeObject<List<string>>(File.ReadAllText(ConfigurationManager.AppSettings["tokensFileName"]));
             Actions = Newtonsoft.Json.JsonConvert.DeserializeObject<List<SmoothDemo.Agent.Models.Action>>(File.ReadAllText(ConfigurationManager.AppSettings["scriptFileName"]));
+
+            OS = new OSHelper();
         }
+
+        public void Skip()
+        {
+            ActionIndex++;
+        }
+
+        public void Next()
+        {
+            try
+            {
+                if (ActionIndex < 0) return;
+
+                if (ActionIndex > Actions.Count - 1) return;
+
+                if (ActionIndex >= Actions.Count) return;
+
+                OS.ExecuteAction(Actions[ActionIndex]);
+
+                ActionIndex++;
+
+                if (Actions[ActionIndex - 1].AutoContinue)
+                    Next();
+            }
+            catch
+            {
+                OS.CloseOpenedWindows();
+            }
+        }
+
+        public void HandleCommand(Command command)
+        {
+            switch (command.Name)
+            {
+                case "next":
+                    Next();
+                    break;
+                case "previous":
+                    Previous();
+                    break;
+                case "init":
+                    Init();
+                    break;
+                case "restart":
+                    Restart();
+                    break;
+                case "skip":
+                    Skip();
+                    break;
+            }
+        }
+
+        public void Previous()
+        {
+            if (ActionIndex > 1)
+            {
+                ActionIndex -= 2;
+                Next();
+            }
+        }
+ 
+        public void Restart()
+        {
+            //Check older version if this causes issues;
+            OS.CloseOpenedWindows();
+          
+
+            Init();
+
+           
+            ActionIndex = 0;
+        }
+
+
+
+
+
+
 
         public event PropertyChangedEventHandler PropertyChanged;
 
