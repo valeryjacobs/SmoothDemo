@@ -1,10 +1,9 @@
-C:\Code\SmoothDemo\SmoothDemo.Agent\bin\Debug\SmoothDemo.Agent.exe.config
 C:\Code\SmoothDemo\SmoothDemo.Agent\bin\Debug\Assets\script.json
 C:\Code\SmoothDemo\SmoothDemo.Agent\bin\Debug\Assets\tokens.json
+C:\Code\SmoothDemo\SmoothDemo.Agent\bin\Debug\SmoothDemo.Agent.exe.config
 C:\Code\SmoothDemo\SmoothDemo.Agent\bin\Debug\SmoothDemo.Agent.exe
 C:\Code\SmoothDemo\SmoothDemo.Agent\bin\Debug\SmoothDemo.Agent.pdb
 C:\Code\SmoothDemo\SmoothDemo.Agent\bin\Debug\InputSimulator.dll
-C:\Code\SmoothDemo\SmoothDemo.Agent\obj\Debug\SmoothDemo.Agent.csprojResolveAssemblyReference.cache
 C:\Code\SmoothDemo\SmoothDemo.Agent\obj\Debug\MainWindow.g.cs
 C:\Code\SmoothDemo\SmoothDemo.Agent\obj\Debug\App.g.cs
 C:\Code\SmoothDemo\SmoothDemo.Agent\obj\Debug\SmoothDemo.Agent_Content.g.cs
@@ -16,3 +15,4 @@ C:\Code\SmoothDemo\SmoothDemo.Agent\obj\Debug\SmoothDemo.Agent.Properties.Resour
 C:\Code\SmoothDemo\SmoothDemo.Agent\obj\Debug\SmoothDemo.Agent.csproj.GenerateResource.Cache
 C:\Code\SmoothDemo\SmoothDemo.Agent\obj\Debug\SmoothDemo.Agent.exe
 C:\Code\SmoothDemo\SmoothDemo.Agent\obj\Debug\SmoothDemo.Agent.pdb
+C:\Code\SmoothDemo\SmoothDemo.Agent\obj\Debug\SmoothDemo.Agent.csprojResolveAssemblyReference.cache

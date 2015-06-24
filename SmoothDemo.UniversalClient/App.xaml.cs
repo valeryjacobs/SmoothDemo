@@ -45,8 +45,14 @@ namespace SmoothDemo.UniversalClient
 
 
             var hubConnection = new HubConnection("http://localhost:8080");
-            var chat = hubConnection.CreateHubProxy("ControlHub");
-            chat.On<string, string>("Send", (name, message) =>
+            var proxy = hubConnection.CreateHubProxy("ControlHub");
+            proxy.On<string, string>("Send", (name, message) =>
+            {
+                Debug.WriteLine(name + ": ");
+                Debug.WriteLine(message);
+            });
+
+            proxy.On<string, string>("broadcastMessage", (name, message) =>
             {
                 Debug.WriteLine(name + ": ");
                 Debug.WriteLine(message);
@@ -54,12 +60,12 @@ namespace SmoothDemo.UniversalClient
 
             hubConnection.Start().Wait();
 
-            chat.Invoke("Notify", "Console app", hubConnection.ConnectionId);
+            proxy.Invoke("Notify", "Console app", hubConnection.ConnectionId);
             string msg = null;
 
             //while ((msg = Console.ReadLine()) != null)
             //{
-                chat.Invoke("Send", "Console app", "Dit werkt!!!").Wait();
+                proxy.Invoke("Send", "W10 App", "Dit werkt!!!").Wait();
            // }
 
         }
