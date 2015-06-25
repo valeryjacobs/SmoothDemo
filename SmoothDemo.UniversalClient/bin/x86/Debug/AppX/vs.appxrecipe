@@ -20,13 +20,89 @@
     <AppXManifest Include="C:\Code\SmoothDemo\SmoothDemo.UniversalClient\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-06-24T14:47:19.195</Modified>
+      <Modified>2015-06-25T13:24:36.020</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Code\SmoothDemo\SmoothDemo.UniversalClient\bin\x86\Debug\Core\ApplicationInsights.config">
       <PackagePath>ApplicationInsights.config</PackagePath>
-      <Modified>2015-06-23T11:48:52.899</Modified>
+      <Modified>2015-06-25T13:08:23.377</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\SmoothDemo\SmoothDemo.UniversalClient\bin\x86\Debug\Core\Assets\Icons\ActionList.png">
+      <PackagePath>Assets\Icons\ActionList.png</PackagePath>
+      <Modified>2015-06-25T06:49:59.556</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\SmoothDemo\SmoothDemo.UniversalClient\bin\x86\Debug\Core\Assets\Icons\Alarm.png">
+      <PackagePath>Assets\Icons\Alarm.png</PackagePath>
+      <Modified>2015-06-25T06:49:59.493</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\SmoothDemo\SmoothDemo.UniversalClient\bin\x86\Debug\Core\Assets\Icons\App.png">
+      <PackagePath>Assets\Icons\App.png</PackagePath>
+      <Modified>2015-06-25T06:49:59.540</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\SmoothDemo\SmoothDemo.UniversalClient\bin\x86\Debug\Core\Assets\Icons\Clipboard.png">
+      <PackagePath>Assets\Icons\Clipboard.png</PackagePath>
+      <Modified>2015-06-25T06:49:59.353</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\SmoothDemo\SmoothDemo.UniversalClient\bin\x86\Debug\Core\Assets\Icons\Connected.png">
+      <PackagePath>Assets\Icons\Connected.png</PackagePath>
+      <Modified>2015-06-25T06:49:59.587</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\SmoothDemo\SmoothDemo.UniversalClient\bin\x86\Debug\Core\Assets\Icons\Disconnected.png">
+      <PackagePath>Assets\Icons\Disconnected.png</PackagePath>
+      <Modified>2015-06-25T06:49:59.572</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\SmoothDemo\SmoothDemo.UniversalClient\bin\x86\Debug\Core\Assets\Icons\Next.png">
+      <PackagePath>Assets\Icons\Next.png</PackagePath>
+      <Modified>2015-06-25T06:49:59.306</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\SmoothDemo\SmoothDemo.UniversalClient\bin\x86\Debug\Core\Assets\Icons\Previous.png">
+      <PackagePath>Assets\Icons\Previous.png</PackagePath>
+      <Modified>2015-06-25T07:44:06.283</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\SmoothDemo\SmoothDemo.UniversalClient\bin\x86\Debug\Core\Assets\Icons\Projector.png">
+      <PackagePath>Assets\Icons\Projector.png</PackagePath>
+      <Modified>2015-06-25T06:49:59.509</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\SmoothDemo\SmoothDemo.UniversalClient\bin\x86\Debug\Core\Assets\Icons\Redo.png">
+      <PackagePath>Assets\Icons\Redo.png</PackagePath>
+      <Modified>2015-06-25T06:49:59.384</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\SmoothDemo\SmoothDemo.UniversalClient\bin\x86\Debug\Core\Assets\Icons\Skip.png">
+      <PackagePath>Assets\Icons\Skip.png</PackagePath>
+      <Modified>2015-06-25T06:49:59.337</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\SmoothDemo\SmoothDemo.UniversalClient\bin\x86\Debug\Core\Assets\Icons\Slide.png">
+      <PackagePath>Assets\Icons\Slide.png</PackagePath>
+      <Modified>2015-06-25T06:49:59.525</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\SmoothDemo\SmoothDemo.UniversalClient\bin\x86\Debug\Core\Assets\Icons\Start.png">
+      <PackagePath>Assets\Icons\Start.png</PackagePath>
+      <Modified>2015-06-25T06:49:59.415</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\SmoothDemo\SmoothDemo.UniversalClient\bin\x86\Debug\Core\Assets\Icons\Stop.png">
+      <PackagePath>Assets\Icons\Stop.png</PackagePath>
+      <Modified>2015-06-25T06:49:59.447</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\SmoothDemo\SmoothDemo.UniversalClient\bin\x86\Debug\Core\Assets\Icons\Stopwatch.png">
+      <PackagePath>Assets\Icons\Stopwatch.png</PackagePath>
+      <Modified>2015-06-25T06:49:59.462</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\SmoothDemo\SmoothDemo.UniversalClient\bin\x86\Debug\Core\Assets\Icons\TodoList.png">
+      <PackagePath>Assets\Icons\TodoList.png</PackagePath>
+      <Modified>2015-06-25T06:49:59.618</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\SmoothDemo\SmoothDemo.UniversalClient\bin\x86\Debug\Core\Assets\Icons\TodoListAlt.png">
+      <PackagePath>Assets\Icons\TodoListAlt.png</PackagePath>
+      <Modified>2015-06-25T06:49:59.603</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\SmoothDemo\SmoothDemo.UniversalClient\bin\x86\Debug\Core\Assets\Icons\ToStart.png">
+      <PackagePath>Assets\Icons\ToStart.png</PackagePath>
+      <Modified>2015-06-25T08:17:25.339</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\SmoothDemo\SmoothDemo.UniversalClient\bin\x86\Debug\Core\Assets\Icons\Undo.png">
+      <PackagePath>Assets\Icons\Undo.png</PackagePath>
+      <Modified>2015-06-25T06:49:59.400</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\SmoothDemo\SmoothDemo.UniversalClient\bin\x86\Debug\Core\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>
@@ -36,13 +112,45 @@
       <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
       <Modified>2015-04-02T15:55:54.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\SmoothDemo\SmoothDemo.UniversalClient\bin\x86\Debug\Core\Assets\SmoothDemoLogo.png">
+      <PackagePath>Assets\SmoothDemoLogo.png</PackagePath>
+      <Modified>2015-06-25T08:00:10.397</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\SmoothDemo\SmoothDemo.UniversalClient\bin\x86\Debug\Core\Assets\SmoothDemoLogoWide.png">
+      <PackagePath>Assets\SmoothDemoLogoWide.png</PackagePath>
+      <Modified>2015-06-25T08:04:20.652</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\SmoothDemo\SmoothDemo.UniversalClient\bin\x86\Debug\Core\Assets\SmoothDemoLogoWider.png">
+      <PackagePath>Assets\SmoothDemoLogoWider.png</PackagePath>
+      <Modified>2015-06-25T08:06:07.387</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\SmoothDemo\SmoothDemo.UniversalClient\bin\x86\Debug\Core\Assets\SplashScreen.scale-100.png">
       <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
-      <Modified>2015-04-02T15:55:54.000</Modified>
+      <Modified>2015-06-25T08:12:35.235</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\SmoothDemo\SmoothDemo.UniversalClient\bin\x86\Debug\Core\Assets\SplashScreen.scale-140.png">
+      <PackagePath>Assets\SplashScreen.scale-140.png</PackagePath>
+      <Modified>2015-06-25T08:06:45.729</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\SmoothDemo\SmoothDemo.UniversalClient\bin\x86\Debug\Core\Assets\SplashScreen.scale-180.png">
+      <PackagePath>Assets\SplashScreen.scale-180.png</PackagePath>
+      <Modified>2015-06-25T08:06:45.866</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\SmoothDemo\SmoothDemo.UniversalClient\bin\x86\Debug\Core\Assets\StoreLogo.scale-100.png">
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
       <Modified>2015-04-02T15:55:54.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\SmoothDemo\SmoothDemo.UniversalClient\bin\x86\Debug\Core\Assets\Wide310x150Logo.scale-100.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-100.png</PackagePath>
+      <Modified>2015-06-25T08:06:45.512</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\SmoothDemo\SmoothDemo.UniversalClient\bin\x86\Debug\Core\Assets\Wide310x150Logo.scale-140.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-140.png</PackagePath>
+      <Modified>2015-06-25T08:06:45.651</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\SmoothDemo\SmoothDemo.UniversalClient\bin\x86\Debug\Core\Assets\Wide310x150Logo.scale-180.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-180.png</PackagePath>
+      <Modified>2015-06-25T08:06:45.759</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\SmoothDemo\SmoothDemo.UniversalClient\bin\x86\Debug\Core\Assets\WideLogo.scale-100.png">
       <PackagePath>Assets\WideLogo.scale-100.png</PackagePath>
@@ -110,23 +218,23 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\SmoothDemo\SmoothDemo.UniversalClient\bin\x86\Debug\Core\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-06-24T14:47:19.913</Modified>
+      <Modified>2015-06-25T13:24:36.817</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\SmoothDemo\SmoothDemo.UniversalClient\bin\x86\Debug\Core\SmoothDemo.UniversalClient.csproj.AppLocalNetFX.GenerateResource.Cache">
       <PackagePath>SmoothDemo.UniversalClient.csproj.AppLocalNetFX.GenerateResource.Cache</PackagePath>
-      <Modified>2015-06-23T11:48:56.249</Modified>
+      <Modified>2015-06-25T13:08:26.627</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\SmoothDemo\SmoothDemo.UniversalClient\bin\x86\Debug\Core\SmoothDemo.UniversalClient.exe">
       <PackagePath>SmoothDemo.UniversalClient.exe</PackagePath>
-      <Modified>2015-06-24T14:47:18.705</Modified>
+      <Modified>2015-06-25T13:24:35.411</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\SmoothDemo\SmoothDemo.UniversalClient\bin\x86\Debug\Core\SmoothDemo.UniversalClient.exe.config">
       <PackagePath>SmoothDemo.UniversalClient.exe.config</PackagePath>
-      <Modified>2015-06-23T11:46:33.481</Modified>
+      <Modified>2015-06-25T12:45:57.782</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\SmoothDemo\SmoothDemo.UniversalClient\bin\x86\Debug\Core\SmoothDemo.UniversalClient.xr.xml">
       <PackagePath>SmoothDemo.UniversalClient.xr.xml</PackagePath>
-      <Modified>2015-06-23T11:48:52.675</Modified>
+      <Modified>2015-06-25T10:45:46.263</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\SmoothDemo\SmoothDemo.UniversalClient\bin\x86\Debug\Core\System.AppContext.dll">
       <PackagePath>System.AppContext.dll</PackagePath>

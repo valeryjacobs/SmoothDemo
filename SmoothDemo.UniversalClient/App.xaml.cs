@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.SignalR.Client;
+using SmoothDemo.UniversalClient.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -26,7 +27,15 @@ namespace SmoothDemo.UniversalClient
     /// </summary>
     sealed partial class App : Application
     {
-     
+
+        private static MainViewModel _mainViewModel;
+
+        public static MainViewModel MainViewModel
+        {
+            get { return _mainViewModel; }
+            set { _mainViewModel = value; }
+        }
+
         /// <summary>
         /// Allows tracking page views, exceptions and other telemetry through the Microsoft Application Insights service.
         /// </summary>
@@ -43,29 +52,9 @@ namespace SmoothDemo.UniversalClient
             this.InitializeComponent();
             this.Suspending += OnSuspending;
 
-            var hubConnection = new HubConnection("http://localhost:8080");
-            var proxy = hubConnection.CreateHubProxy("ControlHub");
-            proxy.On<string, string>("Send", (name, message) =>
-            {
-                Debug.WriteLine(name + ": ");
-                Debug.WriteLine(message);
-            });
+            MainViewModel = new MainViewModel();
 
-            proxy.On<string, string>("broadcastMessage", (name, message) =>
-            {
-                Debug.WriteLine(name + ": ");
-                Debug.WriteLine(message);
-            });
-
-            hubConnection.Start().Wait();
-
-            proxy.Invoke("Notify", "Console app", hubConnection.ConnectionId);
-            string msg = null;
-
-            //while ((msg = Console.ReadLine()) != null)
-            //{
-                proxy.Invoke("Send", "W10 App", "Dit werkt!!!").Wait();
-           // }
+            MainViewModel.Init();
         }
 
         /// <summary>

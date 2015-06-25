@@ -1,4 +1,6 @@
-﻿using SmoothDemo.Agent.Models;
+﻿using Microsoft.AspNet.SignalR;
+using SmoothDemo.Agent.Hubs;
+using SmoothDemo.Agent.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,7 +28,6 @@ namespace SmoothDemo.Agent
         public List<SmoothDemo.Agent.Models.Action> Actions { get; set; }
         public List<string> Tokens { get; set; }
         public int ActionIndex { get; set; }
-        public string ContentToShow { get; set; }
         public string ScriptFileName { get; set; }
 
         private string _statusMessage;
@@ -39,6 +40,7 @@ namespace SmoothDemo.Agent
             set { _log = value; }
         }
 
+        public ControlHub Hub { get; set; }
 
 
         public string StatusMessage
@@ -53,6 +55,19 @@ namespace SmoothDemo.Agent
                 NotifyPropertyChanged();
             }
         }
+
+        private string _contentToShow;
+
+        public string ContentToShow
+        {
+            get { return _contentToShow; }
+            set
+            {
+                _contentToShow = value;
+                NotifyPropertyChanged();
+            }
+        }
+
 
         private OSHelper _osHelper;
 
@@ -70,6 +85,9 @@ namespace SmoothDemo.Agent
 
             OS = new OSHelper();
         }
+
+
+
 
         public void Skip()
         {
@@ -89,6 +107,7 @@ namespace SmoothDemo.Agent
                 OS.ExecuteAction(Actions[ActionIndex]);
 
                 ActionIndex++;
+                Hub.SetActionIndex(ActionIndex);
 
                 if (Actions[ActionIndex - 1].AutoContinue)
                     Next();
@@ -101,7 +120,7 @@ namespace SmoothDemo.Agent
 
         public void HandleCommand(Command command)
         {
-            switch (command.Name)
+            switch (command.Name.ToLower())
             {
                 case "next":
                     Next();
@@ -129,16 +148,16 @@ namespace SmoothDemo.Agent
                 Next();
             }
         }
- 
+
         public void Restart()
         {
             //Check older version if this causes issues;
             OS.CloseOpenedWindows();
-          
+
 
             Init();
 
-           
+
             ActionIndex = 0;
         }
 

@@ -17,17 +17,31 @@ namespace SmoothDemo.Agent.Hubs
             Clients.All.broadcastMessage(name, message);
         }
 
+        public void Ping(string id)
+        {
+            Clients.All.ping(id);
+        }
+
         public void HandleCommand(Command command)
         {
-            App.MainViewModel.(command);
+            var dispatcher = Application.Current.Dispatcher;
+            dispatcher.Invoke(() => App.MainViewModel.HandleCommand(command));
+        }
 
+        public void RequestActionList()
+        {
+            Clients.All.updateActionList(App.MainViewModel.Actions);
+        }
+
+        public void SetActionIndex(int actionIndex)
+        {
+            Clients.All.setActionIndex(actionIndex);
         }
 
         public override Task OnConnected()
         {
-            //Use Application.Current.Dispatcher to access UI thread from outside the MainWindow class
-            //Application.Current.Dispatcher.Invoke(() =>
-            //    ((MainWindow)Application.Current.MainWindow).WriteToConsole("Client connected: " + Context.ConnectionId));
+
+            App.MainViewModel.Hub = this;
 
             return base.OnConnected();
         }

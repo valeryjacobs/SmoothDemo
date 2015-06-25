@@ -23,6 +23,8 @@ namespace SmoothDemo.Agent
         public MainWindow()
         {
             InitializeComponent();
+
+            DataContext = App.MainViewModel;
         }
 
        

@@ -97,7 +97,9 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\Action.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -109,6 +111,33 @@
     <None Include="SmoothDemo.UniversalClient_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Icons\ActionList.png" />
+    <Content Include="Assets\Icons\Alarm.png" />
+    <Content Include="Assets\Icons\App.png" />
+    <Content Include="Assets\Icons\Clipboard.png" />
+    <Content Include="Assets\Icons\Connected.png" />
+    <Content Include="Assets\Icons\Disconnected.png" />
+    <Content Include="Assets\Icons\Next.png" />
+    <Content Include="Assets\Icons\Previous.png" />
+    <Content Include="Assets\Icons\Projector.png" />
+    <Content Include="Assets\Icons\Redo.png" />
+    <Content Include="Assets\Icons\Skip.png" />
+    <Content Include="Assets\Icons\Slide.png" />
+    <Content Include="Assets\Icons\Start.png" />
+    <Content Include="Assets\Icons\Stop.png" />
+    <Content Include="Assets\Icons\Stopwatch.png" />
+    <Content Include="Assets\Icons\TodoList.png" />
+    <Content Include="Assets\Icons\TodoListAlt.png" />
+    <Content Include="Assets\Icons\ToStart.png" />
+    <Content Include="Assets\Icons\Undo.png" />
+    <Content Include="Assets\SmoothDemoLogo.png" />
+    <Content Include="Assets\SmoothDemoLogoWide.png" />
+    <Content Include="Assets\SmoothDemoLogoWider.png" />
+    <Content Include="Assets\SplashScreen.scale-140.png" />
+    <Content Include="Assets\SplashScreen.scale-180.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-100.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-140.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-180.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\Logo.scale-100.png" />
     <Content Include="Assets\SmallLogo.scale-100.png" />

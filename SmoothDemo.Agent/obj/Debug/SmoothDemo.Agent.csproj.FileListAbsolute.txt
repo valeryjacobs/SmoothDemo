@@ -15,4 +15,3 @@ C:\Code\SmoothDemo\SmoothDemo.Agent\obj\Debug\SmoothDemo.Agent.Properties.Resour
 C:\Code\SmoothDemo\SmoothDemo.Agent\obj\Debug\SmoothDemo.Agent.csproj.GenerateResource.Cache
 C:\Code\SmoothDemo\SmoothDemo.Agent\obj\Debug\SmoothDemo.Agent.exe
 C:\Code\SmoothDemo\SmoothDemo.Agent\obj\Debug\SmoothDemo.Agent.pdb
-C:\Code\SmoothDemo\SmoothDemo.Agent\obj\Debug\SmoothDemo.Agent.csprojResolveAssemblyReference.cache

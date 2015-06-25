@@ -1,6 +1,6 @@
 [
 	
-	    {"Type": "Run","Content": ["C:\\Program Files\\Microsoft Office\\Office15\\POWERPNT.EXE","/s C:\\Users\\Valery\\Dropbox\\Presentaties\\WAZUG12\\Azure&Node.pptx"]},
+	    {"Type": "Run","Content": ["C:\\Program Files\\Microsoft Office 15\\root\\office15\\POWERPNT.EXE","/s \"C:\\Users\\Administrator\\OneDrive\\Demo slides.pptx\""]},
 	    {"Type": "Input","Content": "{Ctrl+Esc}(m)"},
         
 	 {"Type": "Show","Content": "NODE Hello world:Website,Hello Node,folders"},

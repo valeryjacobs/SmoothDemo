@@ -12,5 +12,6 @@ namespace SmoothDemo.Agent.Models
         public object Content { get; set; }
         public bool AutoContinue { get; set; }
         public string Description { get; set; }
+        public bool Current { get; set; }
     }
 }
