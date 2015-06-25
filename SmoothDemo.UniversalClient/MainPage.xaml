@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <Page.Resources>
-        <Style TargetType="TextBlock">
+         <Style TargetType="TextBlock">
             <Setter Property="Foreground" Value="White"/>
 
         </Style>
@@ -18,11 +18,11 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="80"/>
         </Grid.RowDefinitions>
-        <ListView Grid.Row="1" ItemsSource="{Binding ActionList}">
+        <ListView Grid.Row="1" ItemsSource="{Binding ActionList}" SelectedItem="{Binding CurrentAction}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Border Margin="2" BorderThickness="0,0,0,1">
-                        <Grid Margin="3">
+                        <Grid Margin="3" >
                             <Grid.Resources>
                                 <Style TargetType="TextBlock">
                                     <Setter Property="FontSize" Value="23"/>
@@ -30,12 +30,12 @@
                                 </Style>
                             </Grid.Resources>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="60"/>
-                                <ColumnDefinition Width="300"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="30"/>
                             </Grid.ColumnDefinitions>
-                            <TextBlock Text="{Binding Type}"></TextBlock>
-                            <TextBlock Grid.Column="1" Text="{Binding Content}"></TextBlock>
+                            <TextBlock Foreground="LightGray" Text="{Binding Type}"></TextBlock>
+                            <TextBlock Foreground="Blue" Grid.Column="1" Text="{Binding Content}"></TextBlock>
                         </Grid>
                     </Border>
                 </DataTemplate>

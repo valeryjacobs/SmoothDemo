@@ -15,7 +15,16 @@ namespace SmoothDemo.UniversalClient.Models
         public object Content { get; set; }
         public bool AutoContinue { get; set; }
         public string Description { get; set; }
-        public bool Current { get; set; }
+        private bool _current;
+
+        public bool Current
+        {
+            get { return _current; }
+            set { _current = value;
+                NotifyPropertyChanged();
+            }
+        }
+        
 
         public event PropertyChangedEventHandler PropertyChanged;
         private async void NotifyPropertyChanged([CallerMemberName] String propertyName = "")

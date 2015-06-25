@@ -29,9 +29,22 @@ namespace SmoothDemo.UniversalClient.ViewModels
             }
         }
 
+        private Models.Action _currentAction;
+
+        public Models.Action CurrentAction
+        {
+            get { return _currentAction; }
+            set
+            {
+                _currentAction = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+
         public void Init()
         {
-            hubConnection = new HubConnection("http://192.168.178.14:8080");
+            hubConnection = new HubConnection("http://192.168.178.13:8080");
             proxy = hubConnection.CreateHubProxy("ControlHub");
 
             proxy.On<string, string>("broadcastMessage", (name, message) =>
@@ -52,7 +65,9 @@ namespace SmoothDemo.UniversalClient.ViewModels
 
             proxy.On<int>("updateActionIndex", (index) =>
             {
+                // ActionList.Where(x => x.Current == true).All(x=>x.Current = false);
 
+                CurrentAction = ActionList[index];
             });
 
             hubConnection.Start().Wait();
@@ -62,7 +77,18 @@ namespace SmoothDemo.UniversalClient.ViewModels
 
         public void RequestActionList()
         {
-            proxy.Invoke("RequestActionList").Wait();
+            Invoke("RequestActionList");
+        }
+
+        private void Invoke(string invokeFunction)
+        {
+            if (hubConnection.State == ConnectionState.Disconnected)
+            {
+                hubConnection = new HubConnection("http://192.168.178.13:8080");
+                proxy = hubConnection.CreateHubProxy("ControlHub");
+            }
+
+            proxy.Invoke(invokeFunction).Wait();
         }
 
         public void Ping()
