@@ -35,7 +35,7 @@ namespace SmoothDemo.Agent.Hubs
 
         public void SetActionIndex(int actionIndex)
         {
-            Clients.All.setActionIndex(actionIndex);
+            Clients.All.updateActionIndex(actionIndex);
         }
 
         public override Task OnConnected()

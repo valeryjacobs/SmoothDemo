@@ -34,15 +34,14 @@ namespace SmoothDemo.Agent
                 }
                 else
                 {
-                    MainViewModel.StatusMessage = "Hub  started on" + ConfigurationManager.AppSettings["LocalHubURL"] + "signalr/hubs";
+                    MainViewModel.StatusMessage = "Hub  started on " + ConfigurationManager.AppSettings["LocalHubURL"] + " signalr/hubs";
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
-            }
 
-            MainViewModel.StatusMessage = "Local hub started.";
+                MainViewModel.StatusMessage = ex.Message;
+            }
         }
 
         

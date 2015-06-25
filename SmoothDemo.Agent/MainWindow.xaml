@@ -5,8 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SmoothDemo.Agent"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Width="380" Height="180">
     <Grid>
-        <TextBlock FontSize="33" Text="{Binding ContentToShow}"></TextBlock>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+            <TextBlock Background="LightGray" FontSize="33" Text="{Binding ContentToShow}"></TextBlock>
+            <TextBlock Height="30" Background="DarkGray" Grid.Row="1" Text="{Binding StatusMessage}" VerticalAlignment="Center"> </TextBlock>
+        </Grid>
+
     </Grid>
 </Window>

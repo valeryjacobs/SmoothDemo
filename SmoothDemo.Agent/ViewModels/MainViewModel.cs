@@ -25,7 +25,7 @@ namespace SmoothDemo.Agent
             Log = new List<string>();
         }
 
-        public List<SmoothDemo.Agent.Models.Action> Actions { get; set; }
+        public List<Models.Action> Actions { get; set; }
         public List<string> Tokens { get; set; }
         public int ActionIndex { get; set; }
         public string ScriptFileName { get; set; }
@@ -87,11 +87,10 @@ namespace SmoothDemo.Agent
         }
 
 
-
-
         public void Skip()
         {
             ActionIndex++;
+            Hub.SetActionIndex(ActionIndex);
         }
 
         public void Next()
@@ -145,6 +144,7 @@ namespace SmoothDemo.Agent
             if (ActionIndex > 1)
             {
                 ActionIndex -= 2;
+                Hub.SetActionIndex(ActionIndex);
                 Next();
             }
         }
@@ -154,18 +154,11 @@ namespace SmoothDemo.Agent
             //Check older version if this causes issues;
             OS.CloseOpenedWindows();
 
-
             Init();
 
-
             ActionIndex = 0;
+            Hub.SetActionIndex(ActionIndex);
         }
-
-
-
-
-
-
 
         public event PropertyChangedEventHandler PropertyChanged;
 
