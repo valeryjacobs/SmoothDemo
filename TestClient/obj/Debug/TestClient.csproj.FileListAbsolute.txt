@@ -1,0 +1,10 @@
+C:\Code\SmoothDemo\TestClient\bin\Debug\TestClient.exe.config
+C:\Code\SmoothDemo\TestClient\bin\Debug\TestClient.exe
+C:\Code\SmoothDemo\TestClient\bin\Debug\TestClient.pdb
+C:\Code\SmoothDemo\TestClient\bin\Debug\Microsoft.AspNet.SignalR.Client.dll
+C:\Code\SmoothDemo\TestClient\bin\Debug\Newtonsoft.Json.dll
+C:\Code\SmoothDemo\TestClient\bin\Debug\Microsoft.AspNet.SignalR.Client.xml
+C:\Code\SmoothDemo\TestClient\bin\Debug\Newtonsoft.Json.xml
+C:\Code\SmoothDemo\TestClient\obj\Debug\TestClient.csprojResolveAssemblyReference.cache
+C:\Code\SmoothDemo\TestClient\obj\Debug\TestClient.exe
+C:\Code\SmoothDemo\TestClient\obj\Debug\TestClient.pdb

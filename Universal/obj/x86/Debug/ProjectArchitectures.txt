@@ -1,0 +1,1 @@
+C:\Code\SmoothDemo\Universal\Universal.csproj;x86

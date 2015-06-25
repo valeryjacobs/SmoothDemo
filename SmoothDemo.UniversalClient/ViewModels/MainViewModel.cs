@@ -31,7 +31,7 @@ namespace SmoothDemo.UniversalClient.ViewModels
 
         public void Init()
         {
-            hubConnection = new HubConnection("http://localhost:8080");
+            hubConnection = new HubConnection("http://192.168.178.14:8080");
             proxy = hubConnection.CreateHubProxy("ControlHub");
 
             proxy.On<string, string>("broadcastMessage", (name, message) =>
