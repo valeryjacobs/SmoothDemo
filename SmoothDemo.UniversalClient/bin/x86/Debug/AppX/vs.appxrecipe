@@ -20,7 +20,7 @@
     <AppXManifest Include="C:\Code\SmoothDemo\SmoothDemo.UniversalClient\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-06-26T08:12:21.836</Modified>
+      <Modified>2015-06-26T08:24:00.226</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -218,7 +218,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\SmoothDemo\SmoothDemo.UniversalClient\bin\x86\Debug\Core\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-06-26T08:12:22.747</Modified>
+      <Modified>2015-06-26T08:24:01.149</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\SmoothDemo\SmoothDemo.UniversalClient\bin\x86\Debug\Core\SmoothDemo.UniversalClient.csproj.AppLocalNetFX.GenerateResource.Cache">
       <PackagePath>SmoothDemo.UniversalClient.csproj.AppLocalNetFX.GenerateResource.Cache</PackagePath>
@@ -226,7 +226,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\SmoothDemo\SmoothDemo.UniversalClient\bin\x86\Debug\Core\SmoothDemo.UniversalClient.exe">
       <PackagePath>SmoothDemo.UniversalClient.exe</PackagePath>
-      <Modified>2015-06-26T08:12:21.517</Modified>
+      <Modified>2015-06-26T08:23:59.869</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\SmoothDemo\SmoothDemo.UniversalClient\bin\x86\Debug\Core\SmoothDemo.UniversalClient.exe.config">
       <PackagePath>SmoothDemo.UniversalClient.exe.config</PackagePath>

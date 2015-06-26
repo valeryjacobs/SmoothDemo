@@ -43,7 +43,8 @@ namespace SmoothDemo.UniversalClient
 
         private void refreshButton_Click(object sender, RoutedEventArgs e)
         {
-            App.MainViewModel.RequestActionList();
+            // App.MainViewModel.RequestActionList();
+            App.MainViewModel.Init();
         }
 
         private void next_Click(object sender, RoutedEventArgs e)

@@ -144,7 +144,7 @@ namespace SmoothDemo.Agent
             if (ActionIndex > 1)
             {
                 ActionIndex -= 2;
-                Hub.SetActionIndex(ActionIndex);
+                
                 Next();
             }
         }
