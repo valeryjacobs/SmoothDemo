@@ -31,6 +31,8 @@ namespace SmoothDemo.Agent
             Windows = new List<string>();
             WindowHandles = new List<int>();
             AddedWindows = new List<int>();
+            Tokens = new List<string>();
+            Encodings = new List<string>() { "{","}","+","%","^","^(a)","~","[","]"};
         }
 
         private List<int> GetTaskWindows()

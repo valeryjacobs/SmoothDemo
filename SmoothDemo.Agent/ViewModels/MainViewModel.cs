@@ -84,6 +84,7 @@ namespace SmoothDemo.Agent
             Actions = Newtonsoft.Json.JsonConvert.DeserializeObject<List<SmoothDemo.Agent.Models.Action>>(File.ReadAllText(ConfigurationManager.AppSettings["scriptFileName"]));
 
             OS = new OSHelper();
+            OS.Tokens = Tokens;
         }
 
 
