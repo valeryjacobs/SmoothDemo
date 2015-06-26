@@ -41,9 +41,45 @@ namespace SmoothDemo.UniversalClient.ViewModels
             }
         }
 
+        private Windows.UI.Xaml.Visibility _popupVisible;
 
-        public void Init()
+        public Windows.UI.Xaml.Visibility PopupVisible
         {
+            get { return _popupVisible; }
+            set
+            {
+                _popupVisible = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+        private string _status;
+
+        public string Status
+        {
+            get { return _status; }
+            set
+            {
+                _status = value;
+
+                if (_status == null || _status == "")
+                {
+                    PopupVisible = Windows.UI.Xaml.Visibility.Collapsed;
+                }
+                else
+                {
+                    PopupVisible = Windows.UI.Xaml.Visibility.Visible;
+                }
+
+                NotifyPropertyChanged();
+            }
+        }
+
+
+
+        public async void Init()
+        {
+            Status = "Connecting...";
             hubConnection = new HubConnection("http://192.168.178.13:8080");
             proxy = hubConnection.CreateHubProxy("ControlHub");
 
@@ -61,6 +97,7 @@ namespace SmoothDemo.UniversalClient.ViewModels
             proxy.On<List<Models.Action>>("updateActionList", (list) =>
             {
                 ActionList = new ObservableCollection<Models.Action>(list);
+                Status = string.Format("Action list updated with {0} items.", ActionList.Count);
             });
 
             proxy.On<int>("updateActionIndex", (index) =>
@@ -68,11 +105,24 @@ namespace SmoothDemo.UniversalClient.ViewModels
                 // ActionList.Where(x => x.Current == true).All(x=>x.Current = false);
 
                 CurrentAction = ActionList[index];
+                
             });
 
-            hubConnection.Start().Wait();
+            try
+            {
+                await hubConnection.Start();
+                Status = "Connected to hub with id " + hubConnection.ConnectionId;
 
-            RequestActionList();
+                RequestActionList();    
+            }
+            catch (Exception ex)
+            {
+                if (ex is System.Net.Http.HttpRequestException)
+                {
+                    Status = "Hub not online or not reachable. Check connection settings";
+                }
+            }
+
         }
 
         public void RequestActionList()

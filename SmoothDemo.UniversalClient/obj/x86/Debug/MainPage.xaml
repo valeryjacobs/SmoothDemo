@@ -7,78 +7,71 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <Page.Resources>
-        <Style TargetType="TextBlock">
+         <Style TargetType="TextBlock">
             <Setter Property="Foreground" Value="White"/>
 
         </Style>
         <!--
-            &#xE248;  back
-            &#xE1CD; repeat
-            &#xEA8A; home
+        &#xE248;  back
+        &#xE1CD; repeat
+        &#xEA8A; home
 
-            &#xE17A; connected
-            &#xE17B; disconnected
+        &#xE17A; connected
+        &#xE17B; disconnected
 
-            &#xE167; link
-            &#xE960; webcam
+        &#xE167; link
+        &#xE960; webcam
 
-            &#xE115; setting
-            &#xE10D; redo
-            &#xE10E; undo
-            &#xE117; refresh
+        &#xE115; setting
+        &#xE10D; redo
+        &#xE10E; undo
+        &#xE117; refresh
 
-            &#xE100; media previous
-            &#xE001; check
-
-            &#xE0AD; next
-            &#xE0A6; previous
-
-            &#xE143; skip
-
--->
+        &#xE100; media previous
+        &#xE001; check-->
 
 
     </Page.Resources>
-    <SplitView x:Name="splitView" DisplayMode="CompactOverlay"  IsPaneOpen="False" 
+    <SplitView x:ConnectionId='1' x:Name="splitView" DisplayMode="CompactOverlay"  IsPaneOpen="False" 
                CompactPaneLength="50" OpenPaneLength="150">
         <SplitView.Pane>
             <StackPanel Background="Gray">
-                <Button x:Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
-                    Width="50" Height="50" Background="Transparent" Click="HamburgerButton_Click"/>
+                <Button x:ConnectionId='2' x:Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
+                    Width="50" Height="50" Background="Transparent"                              />
 
                 <StackPanel Orientation="Horizontal">
-                    <Button x:Name="MenuButton1" FontFamily="Segoe MDL2 Assets" Content="&#xE115;"
+                    <Button x:ConnectionId='9' x:Name="MenuButton1" FontFamily="Segoe MDL2 Assets" Content="&#xE115;"
                     Width="50" Height="50" Background="Transparent"/>
                     <TextBlock Text="Settings" FontSize="18" VerticalAlignment="Center" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <Button x:Name="restart" Click="restart_Click" FontFamily="Segoe MDL2 Assets" Content="&#xE100;"
+                    <Button x:ConnectionId='8' x:Name="restart"                       FontFamily="Segoe MDL2 Assets" Content="&#xE100;"
                         Width="50" Height="50" Background="Transparent"/>
                     <TextBlock Text="restart" FontSize="18" VerticalAlignment="Center" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <Button x:Name="refreshButton" Click="refreshButton_Click"  FontFamily="Segoe MDL2 Assets" Content="&#xE117;"
+                    <Button x:ConnectionId='7' x:Name="refreshButton"                              FontFamily="Segoe MDL2 Assets" Content="&#xE117;"
                         Width="50" Height="50" Background="Transparent"/>
                     <TextBlock Text="Refresh" FontSize="18" VerticalAlignment="Center" />
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal">
-                    <Button x:Name="skipButton" Click="skipButton_Click" FontFamily="Segoe MDL2 Assets" Content="&#xE143;"
+                    <Button x:ConnectionId='6' x:Name="skipButton"                          FontFamily="Segoe MDL2 Assets" Content="&#xE143;"
                         Width="50" Height="50" Background="Transparent"/>
                     <TextBlock Text="Skip" FontSize="18" VerticalAlignment="Center" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <Button x:Name="MenuButton3" FontFamily="Segoe MDL2 Assets" Content="&#xE10E;"
+                    <Button x:ConnectionId='5' x:Name="MenuButton3" FontFamily="Segoe MDL2 Assets" Content="&#xE10E;"
                         Width="50" Height="50" Background="Transparent"/>
                     <TextBlock Text="Undo" FontSize="18" VerticalAlignment="Center" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <Button x:Name="MenuButton4" FontFamily="Segoe MDL2 Assets" Content="&#xE10D;"
+                    <Button x:ConnectionId='4' x:Name="MenuButton4" FontFamily="Segoe MDL2 Assets" Content="&#xE10D;"
                         Width="50" Height="50" Background="Transparent"/>
                     <TextBlock Text="Redo" FontSize="18" VerticalAlignment="Center" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <Button x:Name="MenuButton5" FontFamily="Segoe MDL2 Assets" Content="&#xE960;"
+                    <Button x:ConnectionId='3' x:Name="MenuButton5" FontFamily="Segoe MDL2 Assets" Content="&#xE960;"
                         Width="50" Height="50" Background="Transparent"/>
                     <TextBlock Text="Redo" FontSize="18" VerticalAlignment="Center" />
                 </StackPanel>
@@ -122,16 +115,16 @@
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
                     <StackPanel BorderThickness="0" Grid.Column="1" Orientation="Horizontal" MinWidth="200">
-                        <Button x:Name="previous" FontFamily="Segoe MDL2 Assets" Content="&#xE0A6;"
-                        Width="150" Height="50" Click="previous_Click" FontSize="40" Foreground="White" Background="DarkGray"/>
-
-                        <Button Margin="50,0,0,0" x:Name="next" Click="next_Click" FontFamily="Segoe MDL2 Assets" Content="&#xE0AD;"
+                        <Button x:ConnectionId='11' x:Name="previous" FontFamily="Segoe MDL2 Assets" Content="&#xE0A6;"
+                        Width="150" Height="50"                        FontSize="40" Foreground="White" Background="DarkGray"/>
+                     
+                        <Button x:ConnectionId='12' Margin="50,0,0,0" x:Name="next"                    FontFamily="Segoe MDL2 Assets" Content="&#xE0AD;"
                         Width="150" Height="50" FontSize="40" Foreground="White" Background="DarkGray"/>
 
-
+                      
                     </StackPanel>
                 </Grid>
-                <Grid x:Name="popup" Tapped="popupClose_Tapped" Visibility="{Binding PopupVisible}" Background="#7F595757" Grid.Row="1" VerticalAlignment="Bottom" >
+                <Grid x:ConnectionId='10' x:Name="popup"                            Visibility="{Binding PopupVisible}" Background="#7F595757" Grid.Row="1" VerticalAlignment="Bottom" >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition Width="40"></ColumnDefinition>
@@ -143,3 +136,4 @@
         </SplitView.Content>
     </SplitView>
 </Page>
+
