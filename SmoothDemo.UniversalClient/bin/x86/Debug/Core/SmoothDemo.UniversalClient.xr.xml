@@ -3,6 +3,7 @@
   <Roots.PropertyPathNames>
     <RootPropertyPathName Name="PopupVisible" />
     <RootPropertyPathName Name="Status" />
+    <RootPropertyPathName Name="Connected" />
     <RootPropertyPathName Name="ActionList" />
     <RootPropertyPathName Name="CurrentAction" />
     <RootPropertyPathName Name="Content" />
@@ -51,6 +52,7 @@
       <RootProperty Name="Width" />
       <RootProperty Name="Height" />
       <RootProperty Name="Background" />
+      <RootProperty Name="IsEnabled" />
       <RootProperty Name="FontSize" />
       <RootProperty Name="Foreground" />
       <RootProperty Name="Margin" />

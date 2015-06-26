@@ -75,24 +75,24 @@ namespace SmoothDemo.UniversalClient.ViewModels
             }
         }
 
+        private bool _connected;
 
+        public bool Connected
+        {
+            get { return _connected; }
+            set
+            {
+                _connected = value;
+                NotifyPropertyChanged();
+            }
+        }
 
         public async void Init()
         {
+            Connected = false;
             Status = "Connecting...";
-            hubConnection = new HubConnection("http://192.168.178.13:8080");
+            hubConnection = new HubConnection("http://192.168.0.130:8080");
             proxy = hubConnection.CreateHubProxy("ControlHub");
-
-            proxy.On<string, string>("broadcastMessage", (name, message) =>
-            {
-                Debug.WriteLine(name + ": ");
-                Debug.WriteLine(message);
-            });
-
-            proxy.On<string>("ping", (id) =>
-            {
-                Debug.WriteLine(id);
-            });
 
             proxy.On<List<Models.Action>>("updateActionList", (list) =>
             {
@@ -102,10 +102,7 @@ namespace SmoothDemo.UniversalClient.ViewModels
 
             proxy.On<int>("updateActionIndex", (index) =>
             {
-                // ActionList.Where(x => x.Current == true).All(x=>x.Current = false);
-
                 CurrentAction = ActionList[index];
-                
             });
 
             try
@@ -113,7 +110,9 @@ namespace SmoothDemo.UniversalClient.ViewModels
                 await hubConnection.Start();
                 Status = "Connected to hub with id " + hubConnection.ConnectionId;
 
-                RequestActionList();    
+                Connected = true;
+
+                RequestActionList();
             }
             catch (Exception ex)
             {
