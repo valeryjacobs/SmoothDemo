@@ -11,58 +11,135 @@
             <Setter Property="Foreground" Value="White"/>
 
         </Style>
-    </Page.Resources>
-    <Grid Background="Black">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="80"/>
-        </Grid.RowDefinitions>
-        <ListView Grid.Row="1" ItemsSource="{Binding ActionList}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <Border Margin="2" BorderThickness="0,0,0,1">
-                        <Grid Margin="3">
-                            <Grid.Resources>
-                                <Style TargetType="TextBlock">
-                                    <Setter Property="FontSize" Value="23"/>
-                                    <Setter Property="Foreground" Value="White"/>
-                                </Style>
-                            </Grid.Resources>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="60"/>
-                                <ColumnDefinition Width="300"/>
-                                <ColumnDefinition Width="30"/>
-                            </Grid.ColumnDefinitions>
-                            <TextBlock Text="{Binding Type}"></TextBlock>
-                            <TextBlock Grid.Column="1" Text="{Binding Content}"></TextBlock>
-                        </Grid>
-                    </Border>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-        <Grid Grid.Row="2" BorderThickness="0,1,0,0" BorderBrush="DarkGray">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
-            <StackPanel BorderThickness="0" Grid.Column="1" Orientation="Horizontal">
-                <!--<Image x:Name="undo" Source="Assets/Icons/ToStart.png"/>-->
-                <Image x:Name="previous" Source="Assets/Icons/Previous.png"/>
-                <Image x:Name="stop" Source="Assets/Icons/Stop.png"/>
-                <Image Tapped="next_Tapped" x:Name="next" Source="Assets/Icons/Next.png"/>
-            </StackPanel>
+        <!--
+            &#xE248;  back
+            &#xE1CD; repeat
+            &#xEA8A; home
 
-            <Grid Grid.Column="2" HorizontalAlignment="Right" >
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <Image x:Name="showList" Source="Assets/Icons/ActionList.png"/>
-                <Image x:Name="initialize" Tapped="initialize_Tapped" Grid.Column="1" Source="Assets/Icons/Redo.png"/>
+            &#xE17A; connected
+            &#xE17B; disconnected
+
+            &#xE167; link
+            &#xE960; webcam
+
+            &#xE115; setting
+            &#xE10D; redo
+            &#xE10E; undo
+            &#xE117; refresh
+
+            &#xE100; media previous
+            &#xE001; check
+
+            &#xE0AD; next
+            &#xE0A6; previous
+
+            &#xE143; skip
+
+-->
+
+
+    </Page.Resources>
+    <SplitView x:Name="splitView" DisplayMode="CompactOverlay"  IsPaneOpen="False" 
+               CompactPaneLength="50" OpenPaneLength="150">
+        <SplitView.Pane>
+            <StackPanel Background="Gray">
+                <Button x:Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
+                    Width="50" Height="50" Background="Transparent" Click="HamburgerButton_Click"/>
+
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="MenuButton1" FontFamily="Segoe MDL2 Assets" Content="&#xE115;"
+                    Width="50" Height="50" Background="Transparent"/>
+                    <TextBlock Text="Settings" FontSize="18" VerticalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="restart" Click="restart_Click" FontFamily="Segoe MDL2 Assets" Content="&#xE100;"
+                        Width="50" Height="50" Background="Transparent"/>
+                    <TextBlock Text="restart" FontSize="18" VerticalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="refreshButton" Click="refreshButton_Click"  FontFamily="Segoe MDL2 Assets" Content="&#xE117;"
+                        Width="50" Height="50" Background="Transparent"/>
+                    <TextBlock Text="Refresh" FontSize="18" VerticalAlignment="Center" />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="skipButton" Click="skipButton_Click" FontFamily="Segoe MDL2 Assets" Content="&#xE143;"
+                        Width="50" Height="50" Background="Transparent"/>
+                    <TextBlock Text="Skip" FontSize="18" VerticalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="MenuButton3" FontFamily="Segoe MDL2 Assets" Content="&#xE10E;"
+                        Width="50" Height="50" Background="Transparent"/>
+                    <TextBlock Text="Undo" FontSize="18" VerticalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="MenuButton4" FontFamily="Segoe MDL2 Assets" Content="&#xE10D;"
+                        Width="50" Height="50" Background="Transparent"/>
+                    <TextBlock Text="Redo" FontSize="18" VerticalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="MenuButton5" FontFamily="Segoe MDL2 Assets" Content="&#xE960;"
+                        Width="50" Height="50" Background="Transparent"/>
+                    <TextBlock Text="Redo" FontSize="18" VerticalAlignment="Center" />
+                </StackPanel>
+
+            </StackPanel>
+        </SplitView.Pane>
+        <SplitView.Content>
+            <Grid Background="Black">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="80"/>
+                </Grid.RowDefinitions>
+                <ListView Grid.Row="1" ItemsSource="{Binding ActionList}" SelectedItem="{Binding CurrentAction}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Border Margin="2" BorderThickness="0,0,0,1">
+                                <Grid Margin="3" >
+                                    <Grid.Resources>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="FontSize" Value="23"/>
+                                            <Setter Property="Foreground" Value="White"/>
+                                        </Style>
+                                    </Grid.Resources>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="30"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Foreground="LightGray" Text="{Binding Type}"></TextBlock>
+                                    <TextBlock Foreground="Blue" Grid.Column="1" Text="{Binding Content}"></TextBlock>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Grid Grid.Row="2" BorderThickness="0,1,0,0" BorderBrush="DarkGray">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel BorderThickness="0" Grid.Column="1" Orientation="Horizontal" MinWidth="200">
+                        <Button x:Name="previous" FontFamily="Segoe MDL2 Assets" Content="&#xE0A6;"
+                        Width="150" Height="50" Click="previous_Click" FontSize="40" Foreground="White" Background="DarkGray"/>
+
+                        <Button Margin="50,0,0,0" x:Name="next" Click="next_Click" FontFamily="Segoe MDL2 Assets" Content="&#xE0AD;"
+                        Width="150" Height="50" FontSize="40" Foreground="White" Background="DarkGray"/>
+
+
+                    </StackPanel>
+                </Grid>
+                <Grid x:Name="popup" Tapped="popupClose_Tapped" Visibility="{Binding PopupVisible}" Background="#7F595757" Grid.Row="1" VerticalAlignment="Bottom" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="40"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock TextWrapping="Wrap"  Margin="4" Text="{Binding Status}"></TextBlock>
+                    <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">X</TextBlock>
+                </Grid>
             </Grid>
-        </Grid>
-    </Grid>
+        </SplitView.Content>
+    </SplitView>
 </Page>

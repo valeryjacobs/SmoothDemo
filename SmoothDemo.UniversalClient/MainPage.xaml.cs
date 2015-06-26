@@ -29,15 +29,41 @@ namespace SmoothDemo.UniversalClient
             DataContext = App.MainViewModel;
         }
 
+    
 
-        private void initialize_Tapped(object sender, TappedRoutedEventArgs e)
+        private void HamburgerButton_Click(object sender, RoutedEventArgs e)
+        {
+            splitView.IsPaneOpen = !splitView.IsPaneOpen;
+        }
+
+        private void popupClose_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            popup.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+        }
+
+        private void refreshButton_Click(object sender, RoutedEventArgs e)
         {
             App.MainViewModel.RequestActionList();
         }
 
-        private void next_Tapped(object sender, TappedRoutedEventArgs e)
+        private void next_Click(object sender, RoutedEventArgs e)
         {
             App.MainViewModel.SendCommand("next");
+        }
+
+        private void previous_Click(object sender, RoutedEventArgs e)
+        {
+            App.MainViewModel.SendCommand("previous");
+        }
+
+        private void skipButton_Click(object sender, RoutedEventArgs e)
+        {
+            App.MainViewModel.SendCommand("skip");
+        }
+
+        private void restart_Click(object sender, RoutedEventArgs e)
+        {
+            App.MainViewModel.SendCommand("restart");
         }
     }
 }
