@@ -40,7 +40,7 @@
 
     </Page.Resources>
     <SplitView x:Name="splitView" DisplayMode="CompactOverlay"  IsPaneOpen="False" 
-               CompactPaneLength="50" OpenPaneLength="150">
+               CompactPaneLength="50" OpenPaneLength="250">
         <SplitView.Pane>
             <StackPanel Background="Gray">
                 <Button x:Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
@@ -49,7 +49,7 @@
                 <StackPanel Orientation="Horizontal">
                     <Button x:Name="MenuButton1" FontFamily="Segoe MDL2 Assets" Content="&#xE115;"
                     Width="50" Height="50" Background="Transparent"/>
-                    <TextBlock Text="Settings" FontSize="18" VerticalAlignment="Center" />
+                    <TextBox Text="{Binding AgentAddress, Mode=TwoWay}"></TextBox>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Button x:Name="restart" Click="restart_Click" FontFamily="Segoe MDL2 Assets" Content="&#xE100;"
@@ -81,6 +81,11 @@
                     <Button x:Name="MenuButton5" FontFamily="Segoe MDL2 Assets" Content="&#xE960;"
                         Width="50" Height="50" Background="Transparent"/>
                     <TextBlock Text="Redo" FontSize="18" VerticalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="exitButton" Click="exitButton_Click" FontFamily="Segoe MDL2 Assets" Content="&#xE8BB;"
+                        Width="50" Height="50" Background="Transparent"/>
+                    <TextBlock Text="Exit" FontSize="18" VerticalAlignment="Center" />
                 </StackPanel>
 
             </StackPanel>

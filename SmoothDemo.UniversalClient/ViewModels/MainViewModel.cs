@@ -29,6 +29,19 @@ namespace SmoothDemo.UniversalClient.ViewModels
             }
         }
 
+        private string _agentAddress;
+
+        public string AgentAddress
+        {
+            get { return _agentAddress; }
+            set
+            {
+                _agentAddress = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+
         private Models.Action _currentAction;
 
         public Models.Action CurrentAction
@@ -91,7 +104,8 @@ namespace SmoothDemo.UniversalClient.ViewModels
         {
             Connected = false;
             Status = "Connecting...";
-            hubConnection = new HubConnection("http://192.168.0.130:8080");
+            hubConnection = new HubConnection(AgentAddress);
+            
             proxy = hubConnection.CreateHubProxy("ControlHub");
 
             proxy.On<List<Models.Action>>("updateActionList", (list) =>
@@ -107,6 +121,8 @@ namespace SmoothDemo.UniversalClient.ViewModels
 
             try
             {
+                Status = "About to start hub connection...";
+
                 await hubConnection.Start();
                 Status = "Connected to hub with id " + hubConnection.ConnectionId;
 
@@ -152,7 +168,7 @@ namespace SmoothDemo.UniversalClient.ViewModels
 
         public void SendCommand(string commandName, List<string> parameters)
         {
-            proxy.Invoke("HandleCommand", new Command() { Name = "Next", Parameters = parameters });
+            proxy.Invoke("HandleCommand", new Command() { Name = commandName, Parameters = parameters });
         }
 
         public class Command

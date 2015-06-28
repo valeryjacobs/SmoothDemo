@@ -53,6 +53,7 @@ namespace SmoothDemo.UniversalClient
             this.Suspending += OnSuspending;
 
             MainViewModel = new MainViewModel();
+            MainViewModel.AgentAddress = "http://192.168.178.14:8080";
 
             MainViewModel.Init();
         }

@@ -66,5 +66,10 @@ namespace SmoothDemo.UniversalClient
         {
             App.MainViewModel.SendCommand("restart");
         }
+
+        private void exitButton_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Exit();
+        }
     }
 }
