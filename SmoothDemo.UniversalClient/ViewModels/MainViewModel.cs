@@ -171,6 +171,11 @@ namespace SmoothDemo.UniversalClient.ViewModels
             proxy.Invoke("HandleCommand", new Command() { Name = commandName, Parameters = parameters });
         }
 
+        public void ToggleSwitch(int switchId)
+        {
+            proxy.Invoke("ToggleSwitch", switchId);
+        }
+
         public class Command
         {
             public string Name { get; set; }

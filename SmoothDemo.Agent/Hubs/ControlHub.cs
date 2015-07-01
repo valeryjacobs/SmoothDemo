@@ -28,6 +28,11 @@ namespace SmoothDemo.Agent.Hubs
             dispatcher.Invoke(() => App.MainViewModel.HandleCommand(command));
         }
 
+        public void ToggleSwitch(int switchId)
+        {
+            Clients.All.toggleSwitch(switchId);
+        }
+
         public void RequestActionList()
         {
             Clients.All.updateActionList(App.MainViewModel.Actions);

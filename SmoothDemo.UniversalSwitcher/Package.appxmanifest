@@ -7,14 +7,14 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="SmootDemo-UniversalClient"
+    Name="SmootDemo-Universal-Switcher"
     Publisher="CN=Administrator"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="c57c1eab-3fb1-4fcc-bdbf-eb0304163d69" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="f4288d9f-89fe-478c-80f5-0b6327108005" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>SmoothDemo.UniversalClient</DisplayName>
+    <DisplayName>SmoothDemo.UniversalSwitcher</DisplayName>
     <PublisherDisplayName>Administrator</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -30,12 +30,12 @@
   <Applications>
     <Application Id="App"
       Executable="$targetnametoken$.exe"
-      EntryPoint="SmoothDemo.UniversalClient.App">
+      EntryPoint="SmoothDemo.UniversalSwitcher.App">
       <uap:VisualElements
-        DisplayName="SmoothDemo.UniversalClient"
+        DisplayName="SmoothDemo.UniversalSwitcher"
         Square150x150Logo="Assets\Logo.png"
         Square44x44Logo="Assets\SmallLogo.png"
-        Description="SmoothDemo.UniversalClient"
+        Description="SmoothDemo.UniversalSwitcher"
         BackgroundColor="#464646">
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
       </uap:VisualElements>

@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmoothDemo.UniversalClient"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestClient", "TestClient\TestClient.csproj", "{3B01E1AE-C0D5-482C-B58B-8E07569039FF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmoothDemo.UniversalSwitcher", "SmoothDemo.UniversalSwitcher\SmoothDemo.UniversalSwitcher.csproj", "{ECC7BC3B-FCCC-4BAC-AE5C-ACFDF5C638FA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -74,6 +76,26 @@ Global
 		{3B01E1AE-C0D5-482C-B58B-8E07569039FF}.Release|x64.Build.0 = Release|Any CPU
 		{3B01E1AE-C0D5-482C-B58B-8E07569039FF}.Release|x86.ActiveCfg = Release|Any CPU
 		{3B01E1AE-C0D5-482C-B58B-8E07569039FF}.Release|x86.Build.0 = Release|Any CPU
+		{ECC7BC3B-FCCC-4BAC-AE5C-ACFDF5C638FA}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{ECC7BC3B-FCCC-4BAC-AE5C-ACFDF5C638FA}.Debug|ARM.ActiveCfg = Debug|ARM
+		{ECC7BC3B-FCCC-4BAC-AE5C-ACFDF5C638FA}.Debug|ARM.Build.0 = Debug|ARM
+		{ECC7BC3B-FCCC-4BAC-AE5C-ACFDF5C638FA}.Debug|ARM.Deploy.0 = Debug|ARM
+		{ECC7BC3B-FCCC-4BAC-AE5C-ACFDF5C638FA}.Debug|x64.ActiveCfg = Debug|x64
+		{ECC7BC3B-FCCC-4BAC-AE5C-ACFDF5C638FA}.Debug|x64.Build.0 = Debug|x64
+		{ECC7BC3B-FCCC-4BAC-AE5C-ACFDF5C638FA}.Debug|x64.Deploy.0 = Debug|x64
+		{ECC7BC3B-FCCC-4BAC-AE5C-ACFDF5C638FA}.Debug|x86.ActiveCfg = Debug|x86
+		{ECC7BC3B-FCCC-4BAC-AE5C-ACFDF5C638FA}.Debug|x86.Build.0 = Debug|x86
+		{ECC7BC3B-FCCC-4BAC-AE5C-ACFDF5C638FA}.Debug|x86.Deploy.0 = Debug|x86
+		{ECC7BC3B-FCCC-4BAC-AE5C-ACFDF5C638FA}.Release|Any CPU.ActiveCfg = Release|x86
+		{ECC7BC3B-FCCC-4BAC-AE5C-ACFDF5C638FA}.Release|ARM.ActiveCfg = Release|ARM
+		{ECC7BC3B-FCCC-4BAC-AE5C-ACFDF5C638FA}.Release|ARM.Build.0 = Release|ARM
+		{ECC7BC3B-FCCC-4BAC-AE5C-ACFDF5C638FA}.Release|ARM.Deploy.0 = Release|ARM
+		{ECC7BC3B-FCCC-4BAC-AE5C-ACFDF5C638FA}.Release|x64.ActiveCfg = Release|x64
+		{ECC7BC3B-FCCC-4BAC-AE5C-ACFDF5C638FA}.Release|x64.Build.0 = Release|x64
+		{ECC7BC3B-FCCC-4BAC-AE5C-ACFDF5C638FA}.Release|x64.Deploy.0 = Release|x64
+		{ECC7BC3B-FCCC-4BAC-AE5C-ACFDF5C638FA}.Release|x86.ActiveCfg = Release|x86
+		{ECC7BC3B-FCCC-4BAC-AE5C-ACFDF5C638FA}.Release|x86.Build.0 = Release|x86
+		{ECC7BC3B-FCCC-4BAC-AE5C-ACFDF5C638FA}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

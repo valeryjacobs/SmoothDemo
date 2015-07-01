@@ -83,6 +83,16 @@
                     <TextBlock Text="Redo" FontSize="18" VerticalAlignment="Center" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
+                    <Button x:Name="SwitchA" Click="SwitchA_Click" FontFamily="Segoe MDL2 Assets" Content="&#xE951;A"
+                        Width="50" Height="50" Background="Transparent"/>
+                    <TextBlock Text="Switch A" FontSize="18" VerticalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="SwitchB" Click="SwitchB_Click" FontFamily="Segoe MDL2 Assets" Content="&#xE951;B"
+                        Width="50" Height="50" Background="Transparent"/>
+                    <TextBlock Text="Switch B" FontSize="18" VerticalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
                     <Button x:Name="exitButton" Click="exitButton_Click" FontFamily="Segoe MDL2 Assets" Content="&#xE8BB;"
                         Width="50" Height="50" Background="Transparent"/>
                     <TextBlock Text="Exit" FontSize="18" VerticalAlignment="Center" />

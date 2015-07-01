@@ -71,5 +71,15 @@ namespace SmoothDemo.UniversalClient
         {
             Application.Current.Exit();
         }
+
+        private void SwitchB_Click(object sender, RoutedEventArgs e)
+        {
+            App.MainViewModel.ToggleSwitch(2);
+        }
+
+        private void SwitchA_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
