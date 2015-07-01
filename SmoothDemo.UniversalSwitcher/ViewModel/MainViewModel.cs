@@ -21,6 +21,20 @@ namespace SmoothDemo.UniversalSwitcher.ViewModel
         private GpioPin pinA;
         private GpioPin pinB;
         private GpioPinValue pinValueA, pinValueB;
+        GpioController gpio;
+
+        public MainViewModel()
+        {
+            gpio = GpioController.GetDefault();
+            pinA = gpio.OpenPin(SWITCHA_PIN);
+            pinB = gpio.OpenPin(SWITCHB_PIN);
+            pinValueA = GpioPinValue.Low;
+            pinValueB = GpioPinValue.Low;
+            pinA.Write(pinValueA);
+            pinB.Write(pinValueB);
+            pinA.SetDriveMode(GpioPinDriveMode.Output);
+            pinB.SetDriveMode(GpioPinDriveMode.Output);
+        }
 
         private string _agentAddress;
 
@@ -146,6 +160,20 @@ namespace SmoothDemo.UniversalSwitcher.ViewModel
                  }
              });
 
+           
+
+            // Show an error if there is no GPIO controller
+            if (gpio == null)
+            {
+                pinA = null;
+                pinB = null;
+                Status = "There is no GPIO controller on this device.";
+                return;
+            }
+
+           
+
+            Status = "GPIO pin initialized correctly.";
 
             try
             {
@@ -156,27 +184,6 @@ namespace SmoothDemo.UniversalSwitcher.ViewModel
 
                 Connected = true;
 
-                var gpio = GpioController.GetDefault();
-
-                // Show an error if there is no GPIO controller
-                if (gpio == null)
-                {
-                    pinA = null;
-                    pinB = null;
-                    Status = "There is no GPIO controller on this device.";
-                    return;
-                }
-
-                pinA = gpio.OpenPin(SWITCHA_PIN);
-                pinB = gpio.OpenPin(SWITCHB_PIN);
-                pinValueA = GpioPinValue.Low;
-                pinValueB = GpioPinValue.Low;
-                pinA.Write(pinValueA);
-                pinB.Write(pinValueB);
-                pinA.SetDriveMode(GpioPinDriveMode.Output);
-                pinB.SetDriveMode(GpioPinDriveMode.Output);
-
-                Status = "GPIO pin initialized correctly.";
             }
             catch (Exception ex)
             {
