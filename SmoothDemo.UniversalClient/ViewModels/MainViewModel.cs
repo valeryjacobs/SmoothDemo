@@ -149,7 +149,7 @@ namespace SmoothDemo.UniversalClient.ViewModels
         {
             if (hubConnection.State == ConnectionState.Disconnected)
             {
-                hubConnection = new HubConnection("http://192.168.178.13:8080");
+                hubConnection = new HubConnection(AgentAddress);
                 proxy = hubConnection.CreateHubProxy("ControlHub");
             }
 
@@ -173,6 +173,12 @@ namespace SmoothDemo.UniversalClient.ViewModels
 
         public void ToggleSwitch(int switchId)
         {
+            if (hubConnection.State == ConnectionState.Disconnected)
+            {
+                hubConnection = new HubConnection(AgentAddress);
+                proxy = hubConnection.CreateHubProxy("ControlHub");
+            }
+
             proxy.Invoke("ToggleSwitch", switchId);
         }
 

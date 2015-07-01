@@ -9,7 +9,7 @@
 
     <Grid Background="White">
         <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center">
-            <ToggleSwitch Margin="30"  x:Name="piswitchA"  IsOn="{Binding SwitchB, Mode=TwoWay}"  >
+            <ToggleSwitch Margin="30"  x:Name="piswitchA"  IsOn="{Binding SwitchA, Mode=TwoWay}"  >
                 <ToggleSwitch.RenderTransform>
                     <ScaleTransform ScaleX="3" ScaleY="3"></ScaleTransform>
                 </ToggleSwitch.RenderTransform>

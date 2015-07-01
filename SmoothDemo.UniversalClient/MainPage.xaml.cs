@@ -79,7 +79,7 @@ namespace SmoothDemo.UniversalClient
 
         private void SwitchA_Click(object sender, RoutedEventArgs e)
         {
-
+            App.MainViewModel.ToggleSwitch(1);
         }
     }
 }
