@@ -12,7 +12,7 @@
                 <RowDefinition/>
                 <RowDefinition Height="30"/>
             </Grid.RowDefinitions>
-            <TextBlock Background="LightGray" FontSize="33" Text="{Binding ContentToShow}"></TextBlock>
+            <TextBlock Background="LightGray" FontSize="11" Text="{Binding ContentToShow}"></TextBlock>
             <TextBlock Height="30" Background="DarkGray" Grid.Row="1" Text="{Binding StatusMessage}" VerticalAlignment="Center"> </TextBlock>
         </Grid>
 

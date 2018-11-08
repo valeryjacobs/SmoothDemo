@@ -1,0 +1,511 @@
+[
+  {
+    "Type": "Run",
+    "Content": [
+      "C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\POWERPNT.EXE",
+      "/s \"C:\\Users\\valjac\\Desktop\\Summer School - Containers.pptx\""
+    ]
+  },
+  {
+    "Type": "Section",
+    "Content": "Containers on Azure - Containerizing an app"
+  },
+  {
+    "Type": "Show",
+    "Content": "Let's look at a web app and how it can be containerized."
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "C:\\Program Files\\Microsoft VS Code\\Code.exe",
+      "C:\\Demos\\AKS\\VoteAppRepo\\azure-voting-app-redis"
+    ]
+  },
+  {
+    "Type": "Show",
+    "Content": "Show app code main.py + redis dependency"
+  },
+  {
+    "Type": "Show",
+    "Content": "Show Dockerfile content. Base image + Redis client install"
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "c:\\Windows\\system32\\cmd.exe"
+    ]
+  },
+  {
+    "Type": "Input",
+    "Content": "cd C:\\Demos\\AKS\\VoteAppRepo\\azure-voting-app-redis\\azure-vote[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Input",
+    "Content": "docker build -t dummyimage .[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Show",
+    "Content": "Build shouldn't take long if it was done prior to this demo!"
+  },
+  {
+    "Type": "Show",
+    "Content": "Show 'docker images' and select the dummyimage id for 'docker history #####' to show how the image is constructed"
+  },
+  {
+    "Type": "Show",
+    "Content": "Mention the app will fail as we don't have a Redis server yet. We could create it with a similar proces OR simplify using docker-compose"
+  },
+  {
+    "Type": "Show",
+    "Content": "Show docker-compose.yaml in VSCode"
+  },
+  {
+    "Type": "Show",
+    "Content": "Explain the Type,Service,Image fields etc."
+  },
+  {
+    "Type": "Show",
+    "Content": "docker-compose up -d"
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "c:\\Windows\\system32\\cmd.exe"
+    ]
+  },
+  {
+    "Type": "Input",
+    "Content": "cd C:\\Demos\\AKS\\VoteAppRepo\\azure-voting-app-redis[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Input",
+    "Content": "docker-compose up -d[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Show",
+    "Content": "Talk about what is happening and show the created images"
+  },
+  {
+    "Type": "Input",
+    "Content": "docker images[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Show",
+    "Content": "Show running containers"
+  },
+  {
+    "Type": "Input",
+    "Content": "docker ps[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "http://localhost:8080/"
+    ]
+  },
+  {
+    "Type": "Show",
+    "Content": "Stop and remove the containers"
+  },
+  {
+    "Type": "Input",
+    "Content": "docker-compose stop[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Input",
+    "Content": "docker-compose down[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Section",
+    "Content": "BACK TO DECK"
+  },
+  {
+    "Type": "Section",
+    "Content": "Azure AKS Demo"
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "c:\\Windows\\system32\\cmd.exe"
+    ]
+  },
+  {
+    "Type": "Input",
+    "Content": "cd C:\\Demos\\AKS\\VoteAppRepo\\azure-voting-app-redis[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Input",
+    "Content": "az acr login --name SummerSchoolACR[[V1]]{ENTER}"
+  },
+
+  {
+    "Type": "Input",
+    "Content": "docker images[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Input",
+    "Content": "docker tag azure-vote-front summerschoolacr.azurecr.io{}{}azure-vote-front:v1[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Input",
+    "Content": "docker login https://SummerSchoolACR.azurecr.io[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Show",
+    "Content": "Name"
+  },
+  {
+    "Type": "Input",
+    "Content": "SummerSchoolACR[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Show",
+    "Content": "Password"
+  },
+  {
+    "Type": "Input",
+    "Content": "png+gOIj9ZJXWl2GbYh+9vZheUrUW9lx[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Input",
+    "Content": "docker push summerschoolacr.azurecr.io{}{}azure-vote-front:v1[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Input",
+    "Content": "az acr repository list --name SummerSchoolACR  --output table[[V1]]{ENTER}"
+  },
+
+
+
+  {
+    "Type": "Show",
+    "Content": "Now let's run this app using a K8S yaml manifest file. Show file content in VS Code."
+  },
+
+  {
+    "Type": "Input",
+    "Content": "kubectl apply -f azure-vote-all-in-one-redis.yaml[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Input",
+    "Content": "kubectl get service azure-vote-front --watch[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Section",
+    "Content": "BACK TO THE DECK"
+  },
+  {
+    "Type": "Section",
+    "Content": "Azure App Services Container demo"
+  },
+  {
+    "Type": "Show",
+    "Content": "Running containers under App Services can be based on Docker or Kubernetes. Benefit is that all App Service features are there, but it is a single host for 1+ containers."
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "https://shell.azure.com"
+    ]
+  },
+  {
+    "Type": "Input",
+    "Content": "mkdir MultiContainerDemo[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Input",
+    "Content": "cd MultiContainerDemo[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Input",
+    "Content": "git clone https://github.com/Azure-Samples/multicontainerwordpress[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Input",
+    "Content": "cd multicontainerwordpress[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Input",
+    "Content": "az group create --name VJMultiContainerAppService --location \"West Europe\"[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Input",
+    "Content": "az appservice plan create --name MultiConPlan --resource-group VJMultiContainerAppService --sku S1 --is-linux[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Input",
+    "Content": "curl https://vjdemodata.blob.core.windows.net/contentshare/appcomposition.yaml > appcomposition.yaml[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Input",
+    "Content": "az webapp create --resource-group VJMultiContainerAppService --plan MultiConPlan --name MultiConApp --multicontainer-config-type compose --multicontainer-config-file appcomposition.yaml[[V1]]{ENTER}"
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+  {
+    "Type": "Section",
+    "Content": "Monitoring Demo"
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "https://ms.portal.azure.com/#@microsoft.onmicrosoft.com/resource/subscriptions/72993b69-db12-44fc-9a66-9c2005c30513/resourceGroups/Fabrikam/providers/microsoft.insights/components/fabrikamprod/overview"
+    ]
+  },
+  {
+    "Type": "Show",
+    "Content": "Look at the dashboard combining many monitoring data sources"
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "https://ms.portal.azure.com/#@microsoft.onmicrosoft.com/dashboard/arm/subscriptions/72993b69-db12-44fc-9a66-9c2005c30513/resourcegroups/fabrikam/providers/microsoft.portal/dashboards/cf58dcfd-0683-487c-bc84-048789bca8e5-dashboard"
+    ]
+  },
+  {
+    "Type": "Show",
+    "Content": "Go to App Insights blade for deeper monitoring options"
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "https://ms.portal.azure.com/#@microsoft.onmicrosoft.com/resource/subscriptions/72993b69-db12-44fc-9a66-9c2005c30513/resourceGroups/Fabrikam/providers/microsoft.insights/components/fabrikamprod/overview"
+    ]
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "https://ms.portal.azure.com/#@microsoft.onmicrosoft.com/resource/subscriptions/72993b69-db12-44fc-9a66-9c2005c30513/resourceGroups/Fabrikam/providers/microsoft.insights/components/fabrikamprod/performance"
+    ]
+  },
+  {
+    "Type": "Show",
+    "Content": "Show portal and show the shell"
+  },
+  {
+    "Type": "Show",
+    "Content": "Show creating a resource and talk about automation and alternative management tools."
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "https://shell.azure.com"
+    ]
+  },
+  {
+    "Type": "Input",
+    "Content": "az vm list --output table[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Show",
+    "Content": ""
+  },
+  {
+    "Type": "Show",
+    "Content": ""
+  },
+  {
+    "Type": "Show",
+    "Content": ""
+  },
+  {
+    "Type": "Show",
+    "Content": "SWITCH TO SLIDE DECK CHAPTER 2: Azure Container Services"
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\POWERPNT.EXE",
+      "/s \"C:\\Users\\valjac\\OneDrive - Microsoft\\PresentationNew\\Ortec - Azure Kubernetes Service.pptx\""
+    ]
+  },
+  {
+    "Type": "Show",
+    "Content": "DEMO 2: AZURE CONTAINER SERVICES"
+  },
+  {
+    "Type": "Show",
+    "Content": "Let look at a web app and how it can be containerized."
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "C:\\Program Files\\Microsoft VS Code\\Code.exe",
+      "C:\\Demos\\AKS\\VoteAppRepo\\azure-voting-app-redis"
+    ]
+  },
+  {
+    "Type": "Show",
+    "Content": "Show app code"
+  },
+  {
+    "Type": "Show",
+    "Content": "Show Dockerfile content"
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "c:\\Windows\\system32\\cmd.exe"
+    ]
+  },
+  {
+    "Type": "Input",
+    "Content": "cd C:\\Demos\\AKS\\VoteAppRepo\\azure-voting-app-redis\\azure-vote[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Input",
+    "Content": "docker build -t dummyimage .[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Show",
+    "Content": "Break the docker build as it might take too long!"
+  },
+  {
+    "Type": "Show",
+    "Content": "Show docker-compose.yaml in VSCode"
+  },
+  {
+    "Type": "Show",
+    "Content": "Explain the Type,Service,Image fields etc."
+  },
+  {
+    "Type": "Show",
+    "Content": "docker-compose up -d"
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "c:\\Windows\\system32\\cmd.exe"
+    ]
+  },
+  {
+    "Type": "Input",
+    "Content": "cd C:\\Demos\\AKS\\VoteAppRepo\\azure-voting-app-redis[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Input",
+    "Content": "docker-compose up -d[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Show",
+    "Content": "Talks about what is happening and show the created images"
+  },
+  {
+    "Type": "Input",
+    "Content": "docker images[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Show",
+    "Content": "Show running containers"
+  },
+  {
+    "Type": "Input",
+    "Content": "docker ps[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "http://localhost:8080/"
+    ]
+  },
+  {
+    "Type": "Show",
+    "Content": "Stop and remove the containers"
+  },
+  {
+    "Type": "Input",
+    "Content": "docker-compose stop[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Input",
+    "Content": "docker-compose down[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Show",
+    "Content": "How can we run and manage these containers on a large scale, in the cloud"
+  },
+  {
+    "Type": "Show",
+    "Content": "Introduce AKS"
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "https://ms.portal.azure.com/#create/microsoft.aks"
+    ]
+  },
+  {
+    "Type": "Show",
+    "Content": "Show the fields and the various tabs"
+  },
+  {
+    "Type": "Show",
+    "Content": "Mention there is a quick route to get started very easily."
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "c:\\Windows\\system32\\cmd.exe"
+    ]
+  },
+  {
+    "Type": "Input",
+    "Content": "az group create --name VJAKSDemosT --location westeurope[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Input",
+    "Content": "az aks create --resource-group VJAKSDemosT --name VJK8ST --generate-ssh-keys[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Show",
+    "Content": "Let's go to a pre-provisioned cluster"
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "https://ms.portal.azure.com/#@72f988bf-86f1-41af-91ab-2d7cd011db47/resource/subscriptions/17918e96-fa57-426f-bac2-2ce6219fcc0d/resourceGroups/VJAKSDemos/providers/Microsoft.ContainerService/managedClusters/VJK8S/overview"
+    ]
+  },
+  {
+    "Type": "Show",
+    "Content": ""
+  },
+  {
+    "Type": "Show",
+    "Content": "Let's instantiate a yaml deployment"
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "c:\\Windows\\system32\\cmd.exe"
+    ]
+  },
+  {
+    "Type": "Input",
+    "Content": "kubectl get nodes[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Input",
+    "Content": "kubectl apply -f azure-vote-all-in-one-redis.yaml[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Show",
+    "Content": ""
+  },
+
+  {
+    "Type": "Audio",
+    "Content": "https://vjmedia.blob.core.windows.net/samples/Homer%20Boo.mp3"
+  }
+]

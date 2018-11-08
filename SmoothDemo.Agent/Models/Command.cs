@@ -10,5 +10,7 @@ namespace SmoothDemo.Agent.Models
     {
         public string Name { get; set; }
         public List<string> Parameters { get; set; }
+
+        public int Parameter { get; set; }
     }
 }

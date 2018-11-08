@@ -46,7 +46,7 @@ namespace SmoothDemo.Agent.Hubs
         public override Task OnConnected()
         {
 
-            App.MainViewModel.Hub = this;
+            //App.MainViewModel.Hub = this;
 
             return base.OnConnected();
         }

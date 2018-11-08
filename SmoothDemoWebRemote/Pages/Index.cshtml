@@ -1,0 +1,65 @@
+﻿@page
+<div class="container">
+
+    <div class="row">
+        <div class="col-12">
+            <input type="button" class="btn" id="requestActionListButton" value="Request Action list" />
+            <input type="button" class="btn" id="sendButton" value="Submit custom" />
+            Msg:<input type="text" id="messageInput" />
+            Id:<input type="text" id="userInput" />
+            <audio id="audioBoo" src="https://vjmedia.blob.core.windows.net/samples/Homer%20Boo.mp3" autostart="false"></audio>
+            <audio id="audioLaugh" src="https://vjmedia.blob.core.windows.net/samples/Audience%20Laughing.mp3" autostart="false"></audio>
+            <audio id="audioWow" src="https://vjmedia.blob.core.windows.net/samples/Wow.mp3" autostart="false"></audio>
+            <audio id="audioGrin" src="https://vjmedia.blob.core.windows.net/samples/Goldblum%20Noises.mp3" autostart="false"></audio>
+            <audio id="audioTrombone" src="https://vjmedia.blob.core.windows.net/samples/Trombone.mp3" autostart="false"></audio>
+            <audio id="audioElevator" src="https://vjdemodata.blob.core.windows.net/contentshare/Elevator.mp3" autostart="false"></audio>
+
+
+
+            <input type="button" class="btn" value="Boo!" onclick="play('audioBoo');" />
+            <input type="button" class="btn" value="Laugh" onclick="play('audioLaugh');" />
+            <input type="button" class="btn" value="Grin" onclick="play('audioGrin');" />
+            <input type="button" class="btn" value="Trombone" onclick="play('audioTrombone');" />
+            <input type="button" class="btn" value="El-Start" onclick="play('audioElevator');" />
+            <input type="button" class="btn" value="El-Start" onclick="stop('audioElevator');" />
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-12" id="actionListDiv">
+            <ul id="actionList"></ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <hr />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">&nbsp;</div>
+        <div class="col-6">
+            <ul id="messagesList"></ul>
+        </div>
+    </div>
+
+
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="~/lib/signalr/signalr.js"></script>
+<script src="~/js/chat.js"></script>
+
+<script>
+    function play(element) {
+        var sound = document.getElementById(element);
+        sound.play();
+    }
+
+    function stop(element) {
+        var sound = document.getElementById(element);
+        sound.pause();
+        sound.currentTime = 0;
+    }
+</script>
+@*<script src="~/js/es5-chat.js"></script>*@

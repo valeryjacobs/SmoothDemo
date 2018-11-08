@@ -86,6 +86,7 @@ namespace SmoothDemo.Agent
                     case "Run":
                         Newtonsoft.Json.Linq.JArray actionParms = (Newtonsoft.Json.Linq.JArray)action.Content;
                         Run(actionParms[0].ToString(), actionParms.Count > 1 ? actionParms[1].ToString() : null);
+                        App.MainViewModel.ContentToShow = "Ran " + actionParms.ToString();
                         break;
                     case "Input":
                         Input((string)action.Content);
@@ -94,6 +95,9 @@ namespace SmoothDemo.Agent
                         ReadInput((string)action.Content);
                         break;
                     case "Show":
+                        Show((string)action.Content);
+                        break;
+                    case "Section":
                         Show((string)action.Content);
                         break;
                     case "Close":
@@ -105,9 +109,14 @@ namespace SmoothDemo.Agent
                             CloseOpenedWindows();
                         }
                         break;
+                    case "Audio":
+                       // App.MainViewModel.MediaPlayer.Open(new Uri((string)action.Content));
+                       // App.MainViewModel.MediaPlayer.Play();
+
+                       break;
                 }
             }
-            catch
+            catch(Exception ex)
             {
                 if (AddedWindows != null)
                 {

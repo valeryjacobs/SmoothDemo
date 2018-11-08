@@ -1,0 +1,1078 @@
+[
+  //{
+  //  "Type": "Run",
+  //  "Content": [
+  //    "C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\POWERPNT.EXE",
+  //    "/s \"C:\\Users\\valjac\\Desktop\\Summer School - Containers.pptx\""
+  //  ]
+  //},
+  {
+    "Type": "Section",
+    "Content": "Containers on Azure - Containerizing an app"
+  },
+  {
+    "Type": "Show",
+    "Content": "Let's look at a web app and how it can be containerized."
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "C:\\Program Files\\Microsoft VS Code\\Code.exe",
+      "C:\\Demos\\AKS\\VoteAppRepo\\azure-voting-app-redis"
+    ]
+  },
+  {
+    "Type": "Show",
+    "Content": "Show app code main.py + redis dependency"
+  },
+  {
+    "Type": "Show",
+    "Content": "Show Dockerfile content. Base image + Redis client install"
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "c:\\Windows\\system32\\cmd.exe"
+    ]
+  },
+  {
+    "Type": "Input",
+    "Content": "cd C:\\Demos\\AKS\\VoteAppRepo\\azure-voting-app-redis\\azure-vote[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Input",
+    "Content": "docker build -t dummyimage .[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Show",
+    "Content": "Build shouldn't take long if it was done prior to this demo!"
+  },
+  {
+    "Type": "Show",
+    "Content": "Show 'docker images' and select the dummyimage id for 'docker history #####' to show how the image is constructed"
+  },
+  {
+    "Type": "Show",
+    "Content": "Mention the app will fail as we don't have a Redis server yet. We could create it with a similar proces OR simplify using docker-compose"
+  },
+  {
+    "Type": "Show",
+    "Content": "Show docker-compose.yaml in VSCode"
+  },
+  {
+    "Type": "Show",
+    "Content": "Explain the Type,Service,Image fields etc."
+  },
+  {
+    "Type": "Show",
+    "Content": "docker-compose up -d"
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "c:\\Windows\\system32\\cmd.exe"
+    ]
+  },
+  {
+    "Type": "Input",
+    "Content": "cd C:\\Demos\\AKS\\VoteAppRepo\\azure-voting-app-redis[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Input",
+    "Content": "docker-compose up -d[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Show",
+    "Content": "Talk about what is happening and show the created images"
+  },
+  {
+    "Type": "Input",
+    "Content": "docker images[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Show",
+    "Content": "Show running containers"
+  },
+  {
+    "Type": "Input",
+    "Content": "docker ps[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "http://localhost:8080/"
+    ]
+  },
+  {
+    "Type": "Show",
+    "Content": "Stop and remove the containers"
+  },
+  {
+    "Type": "Input",
+    "Content": "docker-compose stop[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Input",
+    "Content": "docker-compose down[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Section",
+    "Content": "BACK TO DECK"
+  },
+  {
+    "Type": "Section",
+    "Content": "Azure AKS Demo"
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "c:\\Windows\\system32\\cmd.exe"
+    ]
+  },
+  {
+    "Type": "Input",
+    "Content": "cd C:\\Demos\\AKS\\VoteAppRepo\\azure-voting-app-redis[[V1]]{ENTER}"
+  },
+  //{
+  //  "Type": "Input",
+  //  "Content": "az acr login --name SummerSchoolACR[[V1]]{ENTER}"
+  //},
+  {
+    "Type": "Input",
+    "Content": "docker images[[V1]]{ENTER}"
+  },
+  //{
+  //  "Type": "Input",
+  //  "Content": "docker tag azure-vote-front summerschoolacr.azurecr.io{}{}azure-vote-front:v1[[V1]]{ENTER}"
+  //},
+
+
+  //{
+  //  "Type": "Input",
+  //  "Content": "docker login https://SummerSchoolACR.azurecr.io[[V1]]{ENTER}"
+  //},
+  {
+    "Type": "Show",
+    "Content": "Name"
+  },
+  {
+    "Type": "Input",
+    "Content": "SummerSchoolACR[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Show",
+    "Content": "Password"
+  },
+  //{
+  //  "Type": "Input",
+  //  "Content": "png+gOIj9ZJXWl2GbYh+9vZheUrUW9lx[[V1]]{ENTER}"
+  //},
+  //{
+  //  "Type": "Input",
+  //  "Content": "docker push summerschoolacr.azurecr.io{}{}azure-vote-front:v1[[V1]]{ENTER}"
+  //},
+  //{
+  //  "Type": "Input",
+  //  "Content": "az acr repository list --name SummerSchoolACR  --output table[[V1]]{ENTER}"
+  //},
+
+
+  {
+    "Type": "Run",
+    "Content": [
+      "https://ms.portal.azure.com/#@microsoft.onmicrosoft.com/resource/subscriptions/72993b69-db12-44fc-9a66-9c2005c30513/resourceGroups/Fabrikam/providers/microsoft.insights/components/fabrikamprod/overview"
+    ]
+  },
+
+
+
+  {
+    "Type": "Section",
+    "Content": "Monitoring Demo"
+  },
+  {
+    "Type": "Show",
+    "Content": "Look at the dashboard combining many monitoring data sources"
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "https://ms.portal.azure.com/#@microsoft.onmicrosoft.com/dashboard/arm/subscriptions/72993b69-db12-44fc-9a66-9c2005c30513/resourcegroups/fabrikam/providers/microsoft.portal/dashboards/cf58dcfd-0683-487c-bc84-048789bca8e5-dashboard"
+    ]
+  },
+  {
+    "Type": "Show",
+    "Content": "Go to App Insights blade for deeper monitoring options"
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "https://ms.portal.azure.com/#@microsoft.onmicrosoft.com/resource/subscriptions/72993b69-db12-44fc-9a66-9c2005c30513/resourceGroups/Fabrikam/providers/microsoft.insights/components/fabrikamprod/overview"
+    ]
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "https://ms.portal.azure.com/#@microsoft.onmicrosoft.com/resource/subscriptions/72993b69-db12-44fc-9a66-9c2005c30513/resourceGroups/Fabrikam/providers/microsoft.insights/components/fabrikamprod/performance"
+    ]
+  },
+  {
+    "Type": "Show",
+    "Content": "Show portal and show the shell"
+  },
+  {
+    "Type": "Show",
+    "Content": "Show creating a resource and talk about automation and alternative management tools."
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "https://shell.azure.com"
+    ]
+  },
+  {
+    "Type": "Input",
+    "Content": "az vm list --output table[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Show",
+    "Content": ""
+  },
+  {
+    "Type": "Show",
+    "Content": ""
+  },
+  {
+    "Type": "Show",
+    "Content": ""
+  },
+  {
+    "Type": "Show",
+    "Content": "DEMO 2: AZURE CONTAINER SERVICES"
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "C:\\Program Files\\Docker\\Docker\\Docker for Windows.exe"
+    ]
+  },
+
+  {
+    "Type": "Show",
+    "Content": "DEVOPS DEMO"
+  },
+  {
+    "Type": "Show",
+    "Content": "Let's start a new project while practicing a DevOps culture."
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "https://ms.portal.azure.com/#create/Microsoft.AzureProject"
+    ]
+  },
+  {
+    "Type": "Show",
+    "Content": "Click on pre-provisioned project and change code"
+  },
+  {
+    "Type": "Show",
+    "Content": "Show build and release definition"
+  },
+  {
+    "Type": "Show",
+    "Content": "Show Load test and then App insights"
+  },
+  {
+    "Type": "Show",
+    "Content": "LARGE SOLUTION DEMO (IoT)"
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "https://www.azureiotsuite.com/"
+    ]
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "https://vjmonitoring.azurewebsites.net/"
+    ]
+  },
+  {
+    "Type": "Show",
+    "Content": ""
+  },
+  {
+    "Type": "Show",
+    "Content": ""
+  },
+  {
+    "Type": "Show",
+    "Content": "Cost insights is very important. Cloudyn integration in Azure can help."
+  },
+  {
+    "Type": "Show",
+    "Content": ""
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "https://cloudyndemo.azurewebsites.net/02_Cloudyn_Dashboard.html"
+    ]
+  },
+
+  {
+    "Type": "Show",
+    "Content": "BOT DEMO"
+  },
+  {
+    "Type": "Show",
+    "Content": "Bot are an increasingly important form of user interaction that can same operational costs for tedious, less-productive customer interaction."
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "https://insurance.litwaredemos.com/"
+    ]
+  },
+  {
+    "Type": "Show",
+    "Content": "Use 'Bot' and 'Azure' to log in"
+  },
+  {
+    "Type": "Show",
+    "Content": "Let's interact with the bot"
+  },
+  {
+    "Type": "Input",
+    "Content": "What can you do?[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Input",
+    "Content": "Where is the company based?[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Input",
+    "Content": "I need insurance[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Input",
+    "Content": "Lance Olson[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Show",
+    "Content": "Ford fusion 2015"
+  },
+  {
+    "Type": "Input",
+    "Content": "No, that’s way too expensive![[V1]]{ENTER}"
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "https://login.microsoftonline.com/c1159de4-f0a1-46e0-ad9a-b55bc7c24880/wsfed?wa=wsignin1.0&wtrealm=https%3a%2f%2ficcprod.crm.dynamics.com%2f&wctx=pr%3dwsfederation%26rm%3dhttps%253a%252f%252ficcprod.crm.dynamics.com%252f%26ru%3dhttps%253a%252f%252ficcprod.crm.dynamics.com%252f%26ry%3dhttps%253a%252f%252ficcprod.crm.dynamics.com%252f%26crmorgid%3d3dd74c88-0e46-42a1-886c-abd639bc3776%26nonce%3dCRMWSFed.nonce.636645279261919558.MTA4OWFiZGItMzI4My00NzAzLThjY2MtOTcyYzYyYTIwN2ExMzVkZDdlMDctN2Q5ZS00YzVlLTg1Y2YtZTZhOTdjYmJlYTk1&wct=2018-06-13T23%3a05%3a26Z&wreply=https%3a%2f%2fcloudredirector.crm.dynamics.com%3a443%2fG%2fAuthRedirect%2fIndex.aspx%3fRedirectTo%3dhttps%253a%252f%252ficcprod.crm.dynamics.com%252f&sso_nonce=AQABAAAAAADX8GCi6Js6SK82TsD2Pb7rAxm4ggP3dbG60owUF4DP1AaVnDJyZzNZAgNjS89fiw_L9LxQCQqq-ZOMGA7nrhnGL27XzAs-H936_MGxVjmXQCAA&client-request-id=709e25ea-255f-4d27-b4cb-50c25c4cc4a0&mscrid=709e25ea-255f-4d27-b4cb-50c25c4cc4a0"
+    ]
+  },
+
+  {
+    "Type": "Input",
+    "Content": "gregw@pmgdemo.onmicrosoft.com"
+  },
+  {
+    "Type": "Input",
+    "Content": "Dyn@mics365!"
+  },
+  {
+    "Type": "Show",
+    "Content": "Let's look at reporting this in PowerBI"
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "https://msit.powerbi.com/groups/586b07d3-931c-467b-9db2-45d90c2dc169/list/dashboards"
+    ]
+  },
+  {
+    "Type": "Show",
+    "Content": ""
+  },
+  {
+    "Type": "Show",
+    "Content": ""
+  },
+  {
+    "Type": "Show",
+    "Content": ""
+  },
+  {
+    "Type": "Show",
+    "Content": ""
+  },
+  {
+    "Type": "Show",
+    "Content": ""
+  },
+  {
+    "Type": "Show",
+    "Content": ""
+  },
+  {
+    "Type": "Show",
+    "Content": ""
+  },
+
+  {
+    "Type": "Run",
+    "Content": [
+      "C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\POWERPNT.EXE",
+      "/s \"C:\\Users\\valjac\\OneDrive - Microsoft\\PresentationNew\\Ortec - Azure DevTest Labs & Lab Services.pptx\""
+    ]
+  },
+  {
+    "Type": "Show",
+    "Content": "Demo 1: DevTest Lab overview"
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "https://ms.portal.azure.com/#create/Microsoft.DevTestLab"
+    ]
+  },
+  {
+    "Type": "Show",
+    "Content": "Point to default config, RG & tags."
+  },
+  {
+    "Type": "Show",
+    "Content": "Show dashboard and point to RG resources and click Lab resource."
+  },
+  {
+    "Type": "Show",
+    "Content": "Point to My VMs, Claimable VMs"
+  },
+  {
+    "Type": "Show",
+    "Content": "Select VJW10DevBox, point to seperate RG from Lab one and FQDN with unique port combination"
+  },
+  {
+    "Type": "Show",
+    "Content": "CLick connect and show RDP file but Connect through Desktop Conn Man"
+  },
+  {
+    "Type": "Show",
+    "Content": "Head back to Lab blade vjlab and to to Configuration and policies"
+  },
+  {
+    "Type": "Show",
+    "Content": "Explain Cost management, targets and trend"
+  },
+  {
+    "Type": "Show",
+    "Content": "Talk through VMSizes, # per user & lab "
+  },
+  {
+    "Type": "Show",
+    "Content": "Explain announcements and internal support"
+  },
+  {
+    "Type": "Show",
+    "Content": "Talks through auto-shutdown auto-start which can be overruled at VM level"
+  },
+  {
+    "Type": "Show",
+    "Content": "Show VNet options"
+  },
+  {
+    "Type": "Show",
+    "Content": "Explain MP images vs Custom Images "
+  },
+  {
+    "Type": "Show",
+    "Content": "Back to lab blade, show adding VM resource"
+  },
+  {
+    "Type": "Show",
+    "Content": "Explain various type of resources, base image, custom image etc."
+  },
+  {
+    "Type": "Show",
+    "Content": "Explain artifacts, show saved secret usage (mention keyvault!)"
+  },
+  {
+    "Type": "Show",
+    "Content": "Show Advanced setting and talk about IP Address options/LB, claimable setting"
+  },
+  {
+    "Type": "Show",
+    "Content": "Provision VM"
+  },
+  {
+    "Type": "Show",
+    "Content": "Show formulas"
+  },
+  {
+    "Type": "Show",
+    "Content": "Talk about custom artifacts"
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "https://github.com/Azure/azure-devtestlab"
+    ]
+  },
+  {
+    "Type": "Show",
+    "Content": "Click on artifacts folder and select windows-vscode"
+  },
+  {
+    "Type": "Show",
+    "Content": "Show lab configuration with added repository"
+  },
+  {
+    "Type": "Show",
+    "Content": "Show creating resources using these tempaltes and filling ARM template parameters"
+  },
+  {
+    "Type": "Show",
+    "Content": "Talk about setting up a lab for training / demo purposes. Hands-on labs etc."
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "https://labs.azure.com/welcome"
+    ]
+  },
+  {
+    "Type": "Show",
+    "Content": "Show the preview of Lab Services"
+  },
+  {
+    "Type": "Show",
+    "Content": "SWITCH TO SLIDE DECK CHAPTER 2: Azure Container Services"
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\POWERPNT.EXE",
+      "/s \"C:\\Users\\valjac\\OneDrive - Microsoft\\PresentationNew\\Ortec - Azure Kubernetes Service.pptx\""
+    ]
+  },
+  {
+    "Type": "Show",
+    "Content": "DEMO 2: AZURE CONTAINER SERVICES"
+  },
+  {
+    "Type": "Show",
+    "Content": "Let look at a web app and how it can be containerized."
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "C:\\Program Files\\Microsoft VS Code\\Code.exe",
+      "C:\\Demos\\AKS\\VoteAppRepo\\azure-voting-app-redis"
+    ]
+  },
+  {
+    "Type": "Show",
+    "Content": "Show app code"
+  },
+  {
+    "Type": "Show",
+    "Content": "Show Dockerfile content"
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "c:\\Windows\\system32\\cmd.exe"
+    ]
+  },
+  {
+    "Type": "Input",
+    "Content": "cd C:\\Demos\\AKS\\VoteAppRepo\\azure-voting-app-redis\\azure-vote[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Input",
+    "Content": "docker build -t dummyimage .[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Show",
+    "Content": "Break the docker build as it might take too long!"
+  },
+  {
+    "Type": "Show",
+    "Content": "Show docker-compose.yaml in VSCode"
+  },
+  {
+    "Type": "Show",
+    "Content": "Explain the Type,Service,Image fields etc."
+  },
+  {
+    "Type": "Show",
+    "Content": "docker-compose up -d"
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "c:\\Windows\\system32\\cmd.exe"
+    ]
+  },
+  {
+    "Type": "Input",
+    "Content": "cd C:\\Demos\\AKS\\VoteAppRepo\\azure-voting-app-redis[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Input",
+    "Content": "docker-compose up -d[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Show",
+    "Content": "Talks about what is happening and show the created images"
+  },
+  {
+    "Type": "Input",
+    "Content": "docker images[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Show",
+    "Content": "Show running containers"
+  },
+  {
+    "Type": "Input",
+    "Content": "docker ps[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "http://localhost:8080/"
+    ]
+  },
+  {
+    "Type": "Show",
+    "Content": "Stop and remove the containers"
+  },
+  {
+    "Type": "Input",
+    "Content": "docker-compose stop[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Input",
+    "Content": "docker-compose down[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Show",
+    "Content": "How can we run and manage these containers on a large scale, in the cloud"
+  },
+  {
+    "Type": "Show",
+    "Content": "Introduce AKS"
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "https://ms.portal.azure.com/#create/microsoft.aks"
+    ]
+  },
+  {
+    "Type": "Show",
+    "Content": "Show the fields and the various tabs"
+  },
+  {
+    "Type": "Show",
+    "Content": "Mention there is a quick route to get started very easily."
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "c:\\Windows\\system32\\cmd.exe"
+    ]
+  },
+  {
+    "Type": "Input",
+    "Content": "az group create --name VJAKSDemosT --location westeurope[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Input",
+    "Content": "az aks create --resource-group VJAKSDemosT --name VJK8ST --generate-ssh-keys[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Show",
+    "Content": "Let's go to a pre-provisioned cluster"
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "https://ms.portal.azure.com/#@72f988bf-86f1-41af-91ab-2d7cd011db47/resource/subscriptions/17918e96-fa57-426f-bac2-2ce6219fcc0d/resourceGroups/VJAKSDemos/providers/Microsoft.ContainerService/managedClusters/VJK8S/overview"
+    ]
+  },
+  {
+    "Type": "Show",
+    "Content": ""
+  },
+  {
+    "Type": "Show",
+    "Content": "Let's instantiate a yaml deployment"
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "c:\\Windows\\system32\\cmd.exe"
+    ]
+  },
+  {
+    "Type": "Input",
+    "Content": "kubectl get nodes[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Input",
+    "Content": "kubectl apply -f azure-vote-all-in-one-redis.yaml[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Show",
+    "Content": ""
+  },
+  {
+    "Type": "Show",
+    "Content": ""
+  },
+  {
+    "Type": "Show",
+    "Content": ""
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "C:\\Program Files\\Microsoft VS Code\\Code.exe"
+    ]
+  },
+  {
+    "Type": "Show",
+    "Content": ""
+  },
+  {
+    "Type": "Show",
+    "Content": ""
+  },
+  {
+    "Type": "Show",
+    "Content": ""
+  },
+  {
+    "Type": "Show",
+    "Content": ""
+  },
+  {
+    "Type": "Show",
+    "Content": "SWITCH TO SLIDE DECK CHAPTER 3: Serverless compute on Azure"
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\POWERPNT.EXE",
+      "/s \"C:\\Users\\valjac\\OneDrive - Microsoft\\PresentationNew\\Ortec - Serverless compute on Azure.pptx\""
+    ]
+  },
+  {
+    "Type": "Show",
+    "Content": "DEMO 3: FUNCTIONS OVERVIEW"
+  },
+  {
+    "Type": "Show",
+    "Content": "Show creating a new function and the quick start experience"
+  },
+  {
+    "Type": "Show",
+    "Content": "Demonstrate an HTTP trigger and run in using the test tool"
+  },
+  {
+    "Type": "Show",
+    "Content": "Mention the online coding experience is not for serious development"
+  },
+  {
+    "Type": "Show",
+    "Content": "Open de Uploadprotector demo"
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      " C:\\Demos\\UploadProtector\\FunctionBlobDemo\\FunctionBlobDemo\\FunctionBlobDemo.sln"
+    ]
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      " C:\\Users\\valjac\\OneDrive\\DemoFiles"
+    ]
+  },
+  {
+    "Type": "Show",
+    "Content": "Run locally in debug and Drop cute cat picture, next the Dolce picture and show logs+ storage containers + props"
+  },
+  {
+    "Type": "Show",
+    "Content": ""
+  },
+  {
+    "Type": "Show",
+    "Content": ""
+  },
+  {
+    "Type": "Show",
+    "Content": ""
+  },
+  {
+    "Type": "Show",
+    "Content": ""
+  },
+  {
+    "Type": "Show",
+    "Content": ""
+  },
+  {
+    "Type": "Show",
+    "Content": ""
+  },
+  {
+    "Type": "Show",
+    "Content": ""
+  },
+  {
+    "Type": "Show",
+    "Content": ""
+  },
+  {
+    "Type": "Show",
+    "Content": ""
+  },
+  {
+    "Type": "Show",
+    "Content": ""
+  },
+  {
+    "Type": "Input",
+    "Content": "md HelloWorld[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Input",
+    "Content": "cd HelloWorld[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Input",
+    "Content": "md HelloWorld[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Input",
+    "Content": "cd HelloWorld[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "C:\\Program Files\\Microsoft Office 15\\root\\office15\\POWERPNT.EXE",
+      "/s \"C:\\Users\\Valery\\OneDrive\\Demo slides.pptx\""
+    ]
+  },
+  {
+    "Type": "Input",
+    "Content": "{Ctrl+Esc}(m)"
+  },
+  {
+    "Type": "Show",
+    "Content": "NODE Hello world:Website,Hello Node,folders"
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "c:\\Windows\\system32\\cmd.exe"
+    ]
+  },
+  {
+    "Type": "Input",
+    "Content": "cd c:\\{ENTER}"
+  },
+  {
+    "Type": "Input",
+    "Content": "md HelloWorld[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Input",
+    "Content": "cd HelloWorld[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "notepad",
+      "server.js"
+    ]
+  },
+  {
+    "Type": "ReadInput",
+    "Content": "NodeHelloWorld.txt"
+  },
+  {
+    "Type": "Input",
+    "Content": "^(s)"
+  },
+  {
+    "Type": "Input",
+    "Content": "node server.js{ENTER}"
+  },
+  {
+    "Type": "Close"
+  },
+  {
+    "Type": "Show",
+    "Content": "NODE Hello Node 1:Website,folders,console"
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "http://nodejs.org/"
+    ]
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "C:\\Program Files (x86)\\nodejs\\"
+    ]
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "c:\\Windows\\system32\\cmd.exe"
+    ]
+  },
+  {
+    "Type": "Input",
+    "Content": "cd c:\\{ENTER}"
+  },
+  {
+    "Type": "Input",
+    "Content": "md HelloNode[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Input",
+    "Content": "cd HelloNode[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Input",
+    "Content": "echo console.log('Hello Node!'); > hellonode.js{ENTER}"
+  },
+  {
+    "Type": "Input",
+    "Content": "node hellonode.js{ENTER}"
+  },
+  {
+    "Type": "Close"
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "c:\\Windows\\system32\\cmd.exe"
+    ]
+  },
+  {
+    "Type": "Input",
+    "Content": "cd c:\\{ENTER}"
+  },
+  {
+    "Type": "Input",
+    "Content": "md MeteorDemo1[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Input",
+    "Content": "cd MeteorDemo1[[V1]]{ENTER}"
+  },
+  {
+    "Type": "Input",
+    "Content": "meteor create hellometeor{ENTER}"
+  },
+  {
+    "Type": "Input",
+    "Content": "cd hellometeor{ENTER}"
+  },
+  {
+    "Type": "Input",
+    "Content": "meteor{ENTER}"
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "http://localhost:3000"
+    ]
+  },
+  {
+    "Type": "Input",
+    "Content": "%(F4)"
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "C:\\Program Files\\Microsoft Office\\Office15\\POWERPNT.EXE",
+      "/s C:\\Users\\Valery\\Dropbox\\Presentaties\\WAZUG12\\Azure&Node.pptx"
+    ]
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "http://localhost:1337"
+    ]
+  },
+  {
+    "Type": "Close"
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "c:\\Windows\\system32\\cmd.exe"
+    ]
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "c:\\Windows\\system32\\notepad.exe"
+    ]
+  },
+  {
+    "Type": "Close"
+  },
+  {
+    "Type": "Input",
+    "Content": "{DOCKRIGHT}"
+  },
+  {
+    "Type": "Input",
+    "Content": "cd  C:\\Users\\Valery\\Dropbox\\Presentaties\\WAZUG12\\Demos\\HelloWorld{ENTER}"
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "notepad",
+      "server[[V2]].js"
+    ]
+  },
+  {
+    "Type": "ReadInput",
+    "Content": "C:\\Users\\Valery\\Dropbox\\Presentaties\\WAZUG12\\Demos\\HelloWorld\\server.js"
+  },
+  {
+    "Type": "Input",
+    "Content": "^(s)"
+  },
+  {
+    "Type": "Close"
+  },
+  {
+    "Type": "Input",
+    "Content": "node server.js{ENTER}"
+  },
+  {
+    "Type": "Run",
+    "Content": [
+      "http://localhost:1337"
+    ]
+  },
+  {
+    "Type": "Audio",
+    "Content": "https://vjmedia.blob.core.windows.net/samples/Homer%20Boo.mp3"
+  }
+]
